@@ -1,0 +1,19 @@
+<header>
+  <div class="inner">
+    <nav>
+      <ul class="sitenav">
+        <li class="navli nav1"><%= link_to "Location", "/location", class: 'navlink' %></li>
+        <li class="navli nav2"><%= link_to "Charters", "/charters", class: 'navlink' %></li>
+
+        <li class="logo-nav">
+          <%= link_to "/", class: "logo-link" do %>
+            <%= image_tag("gac-logo.png") %>
+          <% end %>
+        </li>
+
+        <li class="navli nav3"><%= link_to "Toy Time", "/toy-time", class: 'navlink' %></li>
+        <li class="navli nav4"><%= link_to "FAQ's", "/faq", class: 'navlink' %></li>
+      </ul>
+    </nav>
+  </div>
+</header>

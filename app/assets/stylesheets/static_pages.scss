@@ -1,0 +1,257 @@
+@import "mixins";
+@import "variables";
+@import "uikit";
+
+
+.inner {width:85%; @include center-block();}
+.inside {@include sec-default();}
+
+.kgrid{@include sec-default();
+  .left, .right {@include sec-grid(left, 45%);}
+  .right {float: right;}
+}
+
+ul{list-style-type: none; margin-bottom: 0;}
+
+a {
+  text-decoration: none;
+  &:hover{text-decoration: none;opacity: .7;}
+}
+// p{font-size:17px;}
+
+/*****************************************/
+/*****************************************/
+/*****************************************/
+
+.wave-div{
+  @include sec-default();  background-color: transparent;
+  margin-top:-100px;height:110px;
+  background-image: url(image_path('sea.png'));background-repeat: repeat;background-size: 70%;
+}
+
+.full-page{@include sec-default();padding: 60px 0;}
+.head-banner {@include sec-default(); @include sec-bgimage('seawater.jpg');
+  background-position: center center; text-align: center;
+  height:400px;
+  .inner {padding: 60px 0; width:35%;}
+}
+
+.custom-banner {@include sec-default(); height: 400px;
+  background-image: url(image_path('water-vert.jpg')), url(image_path('tt1.jpg'));
+  background-position: top left, center right; background-size: 25%, 75%; background-repeat: no-repeat;
+  position: relative; z-index: 0;
+  &::before {@include before(); width:25%; background-color: rgba($navy, .7);}
+  .inner {padding: 30px 0; width:40%; float: left; margin-left: 15%; }
+  h1, h3 {color: $white; @include tshadowl($black);}
+}
+
+.grad-link {width: auto; padding: 10px 30px; @include gradient($lt-blue, $blue); color: $white; font-weight: bold; border-radius:5px; letter-spacing: 1.5px; text-transform: uppercase;}
+
+.home {
+  header{position: absolute; background-size: transparent;
+    .sitenav li.navlink a{color: $white;}
+  }
+
+  .wave-div{margin-top:-75px;background-size: 60%;width:110%;}
+
+  .site-intro {
+    @include sec-default();@include sec-bgimage('header-img.jpg');background-size:cover;
+    height: 550px;
+
+    padding: 80px 40px;
+    text-align: center;
+    h1, h2, a{ text-shadow: 0px 1px 1px rgba($navy, .9);}
+    h1 {font-size:40px; line-height: 1.5em; text-transform: uppercase;  font-family: $chels; line-height: 1.2em;
+      margin-top:100px;
+      span{font-size: 30px;color: $white;}
+      b{color: $lt-blue;}
+    }
+    h2{color:$white; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; font-size: 1.8rem;}
+    a.phone-link {font-family: $chels; color: $orange; font-size: 44px;}
+  }
+
+  h1 {font-size:40px; line-height: 1.5em; text-transform: uppercase;  font-family: $chels; line-height: 1.2em;
+      span{font-size: 30px;color: $yellow;}
+      b{color: $blue;}
+      width:60%; @include center-block();
+  }
+  p {color: $light;}
+
+  .sec1, .sec2, .sec3, .sec4 {@include sec-default(); padding: $fw-pad;
+    .inner {width:80%;}
+  }
+
+  .sec1 { text-align: center; padding: 50px 0 150px;
+    .text {width: 65%; @include center-block();}
+  }
+
+  .sec2 {padding-top:0; background-color: $f9;
+    @include sec-default(); position: relative;z-index: 0;&::before{@include before(); height:80%; @include sec-bgimage('water-sketch-orange.jpg');}
+    // &::after{@include before(); height:6%; background-color: $f7; top: 94%;}
+    .inner{width:75%;}
+
+    .left {width: 45%; display:inline-block; float: left;  background-color: transparent; margin-top:-3%;}
+    .text-box {width: 40%; float: right; display: inline-block; margin-top:200px; background-color: $white; padding:30px 5%;
+      h4{font-weight: bold;}
+      .grad-link {@include gradient(rgba($orange, .85), $orange);}
+    }
+  }
+
+  .sec3 {background-color: $f9;
+    .inner{width:75%;}
+    h3{font-weight: bold;margin-bottom:5px;}
+    .image, .content-hlf {@include sec-grid(right, 50%);}
+    .content-hlf{float:left; width: 48%;}
+
+    .image .img-sec3{width:100%;max-height:370px;}
+    .text {padding:20px 10% 10px; background-color: $white; margin-bottom: 20px;}
+
+    .lr-link{@include sec-grid(left, 39%); text-align: center;
+      position: relative; z-index: 0;
+      padding: 14% 5%;
+      font-size: 20px; color: $white; font-weight: bold; @include tshadowl(rgba($black, .8));
+
+      &.one{@include sec-bgimage('boat-view3.jpg');}
+      &.two{@include sec-bgimage('boat-view2.jpg'); float:right;}
+    }
+
+
+
+
+  }
+
+  @include bp(xl) {
+    // p {font-size: 18px;}
+  }
+}
+
+
+.location {
+  .top-box{width: 60%; @include center-block();
+    h2 {position: absolute; @include rotate(-90deg); float:left; margin-left: -70px; margin-top:10%;}
+    .inside {background-color: $white; padding: 25px 40px; margin-top:-5%;}
+    .image, .text {@include sec-grid(left, 53%); margin-left: 2%; }
+    .text {width: 40%; float: right; margin-left: 0; }
+  }
+}
+
+.charters {
+  .options{@include sec-default(); text-align: center;
+    .inner {width: 90%;}
+  }
+
+  .charter-opt {
+    // height: 350px;
+    position: relative; z-index: 0;
+    @include sec-grid(left, 25%);text-align: center; margin-left: 5%;
+    padding: 20% 20px 20px;
+    margin-bottom:40px;
+    @include sec-bgimage('water-vert.jpg');
+
+    span{font-size: .9rem; font-style: italic; color: rgba($black, .7);}
+    h4 {font-size: 1.1rem; letter-spacing: 1px;}
+
+    .opt-link{width:80%; @include center-block(); background-color: $white; position:relative; z-index: 0; padding:12px 10px 10px;
+      &:before {@include before(); height: 50%; top: 50%; background-color: $yellow;}
+    }
+
+    .opt-link:hover {
+      opacity: 1;
+      &:before {opacity: .2;}
+
+    }
+  }
+
+
+  .charter-option {
+    display: inline; float: left;
+    width:17%;
+    position: relative; z-index: 0;
+    padding: 20px 15px;
+    border-left: 3px dotted $orange;
+
+    // &::before{@include before(); width: 1px; border-right: 3px dotted $orange;}
+    // &:first-child::before{display: none;}
+    &:first-child{border-left:none;}
+
+    .co-icon {@include center-block();
+      position: relative; z-index: 0;
+      .icon {height: 100px;}
+
+      &::before {@include before(); width: 110px; height:110px; margin-top: 3px; border-radius: 50%; margin-left: 26%;}
+    }
+    h4 {font-size: 1.1rem; letter-spacing: 1px;}
+    .book-btn{font-style: italic; color: white; padding: 10px;}
+    p{position: relative;z-index: 1;}
+
+    &.color1 {
+      .co-icon::before, .book-btn {background-color: $yellow;}
+      h4{color: $yellow;}
+    }
+
+    &.color2 {
+      .co-icon::before, .book-btn {background-color: $blue;}
+      h4{color: $blue;}
+    }
+
+    &.color3 {
+      .co-icon::before, .book-btn {background-color: #bf81d9;}
+      h4{color: #bf81d9;}
+    }
+
+    &.color4 {
+      .co-icon::before, .book-btn {background-color: $lt-blue;}
+      h4{color: $lt-blue;}
+    }
+
+    &.color5 {
+      .co-icon::before, .book-btn {background-color: $orange;}
+      h4{color: $orange;}
+    }
+  }
+}
+
+
+.faq {
+  .uk-background-cover {background-image: url(image_path('boat-view1.jpg'));}
+  .uk-background-contain {background-image: url(image_path('boat-view1.jpg'));}
+
+  .kgrid{@include sec-default(); margin-bottom: 50px;
+    // .inner {width: 80%;}
+    .left{width: 30%; margin-left:15%;}
+    .right{width: 50%; float:left; padding-left: 3%;
+      // margin-left:8%;
+      float:right;
+      position:relative; z-index: 0;
+      &::before{@include before(); width: 4px; height: 100%; background-color: $blue;}
+    }
+
+    h1{font-weight: bold; margin-top: 10%;}
+    h3 {font-size: 1rem;}
+    .top-menu a {@include sec-default(); margin-bottom:5px; color: $blue;}
+  }
+
+  .faqs-full{@include sec-default(); text-align: center;
+    position:relative; z-index: 0;
+    &::before{@include before();height: 170px; background-color: $blue;}
+    // &::after{@include before();height: 30%; background-color: $blue; top:70%;}
+
+    .faq {display: inline-block; margin-left:1%; float: left;
+      width:29%; text-align: left;
+      // height:150px;margin-bottom:15px;
+      padding: 40px 20px;
+      &.top {text-align: center;}
+
+      h4 {font-size: 1.1rem;margin-bottom: 5px; font-weight:bold;}
+      p{color: $white;margin-bottom: 0;}
+    }
+
+    .faq-grid, .faq-grid2 {@include sec-grid(left, 45%); padding: 45px 2% 0;
+      .faq {width:100%; padding:0px 30px 0 0px;margin-bottom:20px;
+        p{color: #888;}
+        h4 {margin-bottom:0;}
+      }
+    }
+    .faq-grid2 {float: right;}
+  }
+}

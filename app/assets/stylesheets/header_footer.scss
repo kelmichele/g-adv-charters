@@ -1,0 +1,25 @@
+@import "mixins";
+@import "variables";
+
+/*****************************************/
+/***************HEADER*******************/
+/*****************************************/
+header { @include sec-default(); text-align: center;
+  nav { width: 65%; @include center-block(); }
+  .sitenav li{display: inline-block; float: left;
+    &.nav1, &.nav2 {float: left;}
+    &.nav3, &.nav4 {float: right;}
+    &.logo-nav {width: 135px; display: inline-block; float: none; margin:10px auto;}
+
+    &.navli {margin: 70px 2% 5px;}
+    .navlink {font-family: $raleway; font-size:18px;}
+  }
+}
+
+
+/*****************************************/
+/***************FOOTER*******************/
+/*****************************************/
+.site-footer { @include sec-default(); text-align: center; padding:15px 0; background-color: $navy;}
+
+
