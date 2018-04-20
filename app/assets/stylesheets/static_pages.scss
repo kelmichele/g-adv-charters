@@ -15,12 +15,6 @@ ul {padding-left:0;}
 
 .full-page{@include sec-default();padding: 60px 0;}
 
-.head-banner {@include sec-default(); @include sec-bgimage('seawater.jpg');
-  background-position: center center; text-align: center;
-  height:400px;
-  .inner {padding: 60px 0; width:35%;}
-}
-
 .custom-banner {@include sec-default(); height: 400px;
   background-image: url(image_path('water-vert.jpg')), url(image_path('tt1.jpg'));
   background-position: top left, center right; background-size: 25%, 75%; background-repeat: no-repeat;
@@ -29,6 +23,18 @@ ul {padding-left:0;}
   .inner {padding: 30px 0; width:40%; float: left; margin-left: 15%; }
   h1, h3 {color: $white; @include tshadowl($black);}
 }
+
+.hd-grad{@include sec-default(); padding: 6% 0;
+  @include sec-bgimage('boat-view4.jpg');background-position:center center;
+  position: relative;z-index: 0; &::before {@include before(); height: 5px; background-color: white; top: 49%;}
+  h1{font-family: $chels; letter-spacing: 1px; text-transform: uppercase; font-weight: bold;}
+  .box-text {background-color: $orange; width: 33%; border:5px solid white; @include center-block(); padding: 4% 15px; text-align: center;
+    position: relative;z-index: 0;
+    &::before {@include before(); background-color: white; width:5px; margin-top: -104px; left: -5px;}
+    &::after {@include before(); background-color: white; width:5px; margin-top: 104px; left: 100%;}
+  }
+}
+
 
 .grad-link {width: auto; padding: 10px 30px; @include gradient($lt-blue, $blue); color: $white; font-weight: bold; border-radius:5px; letter-spacing: 1.5px; text-transform: uppercase;}
 
@@ -76,7 +82,7 @@ a {
       span{font-size: 30px;color: $white;}
       b{color: $lt-blue;}
     }
-    h2{color:$white; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; font-size: 1.8rem;}
+    h2{color:$white; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
     .phone-link {font-family: $chels; color: $orange; font-size: 44px;}
   }
 
@@ -161,12 +167,42 @@ a {
 
 
 .location {
-  // .head-banner{background-size: 90%;}
-  .top-box{width: 60%; @include center-block();
-    h2 {position: absolute; @include rotate(-90deg); float:left; margin-left: -70px; margin-top:10%;}
-    .inside {background-color: $white; padding: 25px 40px; margin-top:-5%;}
-    .image, .text {@include sec-grid(left, 53%); margin-left: 2%; }
-    .text {width: 40%; float: right; margin-left: 0; }
+  .full-page .inner {width:90%;}
+  h2{font-family: $chels; letter-spacing: 1px; text-transform: uppercase; font-weight: bold;}
+  h3 {font-weight: bold;}
+  p{margin-bottom: 10px;}
+  .intro {width:65%; @include center-block();text-align: center; padding:10px 0 70px;
+    p{color: $light;}
+  }
+
+  .title-line {width: 10%; height: 1px; background-color: $navy; margin: 0 auto 20px;}
+
+  .contact-box{@include sec-default(); padding:30px 40px; margin-top:25px;
+    background-color:$f8; @include sec-bgimage('tt6.jpg'); background-size: 50%; background-position: top right;
+
+    background-size: 60%; background-position: right center;
+    position: relative; z-index: 0;
+    &::after {@include before(); margin-top:-2%;height:110%;
+      background: -webkit-linear-gradient(-122deg, $f8 50%, transparent 25%);
+      background: linear-gradient(115deg, $f8 50%, transparent 25%);
+    }
+    .text{@include sec-default();padding: 30px 3%;
+      // width: 85%;@include center-block();
+      border:2px ridge rgba($black, .6);
+    }
+
+    .blk{width: 40%; text-align: center; margin: 20px 0;}
+    p {line-height: 1.55em; font-size:17px; letter-spacing: .5px;
+      span{font-size:16px; color: $blue; font-weight: bold;}
+    }
+  }
+
+
+  .payment-info{@include sec-default(); padding: 60px 0 75px; margin-top:40px; background-color: $blue;
+    .inner {width:75%; text-align: center;}
+    .pay1, .pay2{@include sec-grid(none, 40%); margin-left:5%;}
+    h2{margin-bottom: 45px;}
+    h3{margin-bottom: 7px;}
   }
 }
 
@@ -174,91 +210,12 @@ a {
   .underlay {position: relative;z-index: 0;}
   .overlay{position: absolute; z-index: 4;}
 
-  .hd-grad{@include sec-default(); padding: 6% 0;
-    @include sec-bgimage('boat-view4.jpg');background-position:center center;
-    position: relative;z-index: 0; &::before {@include before(); height: 5px; background-color: white; top: 49%;}
-
-    .box {
-      &.box-text {background-color: $yellow; width: 33%; border:5px solid white; @include center-block(); padding: 4% 0; text-align: center;}
-      position: relative;z-index: 0;
-      &::before {@include before(); background-color: white; width:5px; margin-top: -104px; left: -5px;}
-      &::after {@include before(); background-color: white; width:5px; margin-top: 104px; left: 100%;}
-    }
+  .hd-grad{@include sec-bgimage('boat-view4.jpg');background-position:center center;
+    .box-text {background-color: $orange;}
   }
 
-
-  .options{@include sec-default(); text-align: center;
-    .inner {width: 90%;}
-  }
-
-  .charter-opt {
-    // height: 350px;
-    position: relative; z-index: 0;
-    @include sec-grid(left, 25%);text-align: center; margin-left: 5%;
-    padding: 20% 20px 20px;
-    margin-bottom:40px;
-    @include sec-bgimage('water-vert.jpg');
-
-    span{font-size: .9rem; font-style: italic; color: rgba($black, .7);}
-    h4 {font-size: 1.1rem; letter-spacing: 1px;}
-
-    .opt-link{width:80%; @include center-block(); background-color: $white; position:relative; z-index: 0; padding:12px 10px 10px;
-      &:before {@include before(); height: 50%; top: 50%; background-color: $yellow;}
-    }
-
-    .opt-link:hover {
-      opacity: 1;
-      &:before {opacity: .2;}
-
-    }
-  }
-
-
-  .charter-option {
-    display: inline; float: left;
-    width:17%;
-    position: relative; z-index: 0;
-    padding: 20px 15px;
-    border-left: 3px dotted $orange;
-
-    // &::before{@include before(); width: 1px; border-right: 3px dotted $orange;}
-    // &:first-child::before{display: none;}
-    &:first-child{border-left:none;}
-
-    .co-icon {@include center-block();
-      position: relative; z-index: 0;
-      .icon {height: 100px;}
-
-      &::before {@include before(); width: 110px; height:110px; margin-top: 3px; border-radius: 50%; margin-left: 26%;}
-    }
-    h4 {font-size: 1.1rem; letter-spacing: 1px;}
-    .book-btn{font-style: italic; color: white; padding: 10px;}
-    p{position: relative;z-index: 1;}
-
-    &.color1 {
-      .co-icon::before, .book-btn {background-color: $yellow;}
-      h4{color: $yellow;}
-    }
-
-    &.color2 {
-      .co-icon::before, .book-btn {background-color: $blue;}
-      h4{color: $blue;}
-    }
-
-    &.color3 {
-      .co-icon::before, .book-btn {background-color: #bf81d9;}
-      h4{color: #bf81d9;}
-    }
-
-    &.color4 {
-      .co-icon::before, .book-btn {background-color: $lt-blue;}
-      h4{color: $lt-blue;}
-    }
-
-    &.color5 {
-      .co-icon::before, .book-btn {background-color: $orange;}
-      h4{color: $orange;}
-    }
+  .intro {@include sec-default(); padding: 50px 0 20px; text-align: center;
+    h3{margin-bottom: 8px;}
   }
 
   .full-menu{@include sec-default(); padding:80px 0 30px;
@@ -347,31 +304,29 @@ a {
   .uk-background-contain {background-image: url(image_path('boat-view1.jpg')); }
 
   .kgrid{@include sec-default(); margin-bottom: 50px;
-    // .inner {width: 80%;}
     .left{width: 30%; margin-left:15%;}
     .right{width: 50%; float:left; padding-left: 3%;
-      // margin-left:8%;
       float:right;
       position:relative; z-index: 0;
       &::before{@include before(); width: 4px; height: 100%; background-color: $blue;}
     }
 
     h1{font-weight: bold; margin-top: 10%;}
-    h3 {font-size: 1rem;}
-    .top-menu a {@include sec-default(); margin-bottom:5px; color: $blue;}
+    h3 {margin-top:18%; font-size: 19px;}
+    .top-menu a {@include sec-default(); margin-bottom:5px; color: $blue; font-size:1.2rem;}
   }
 
   .faqs-full{@include sec-default(); text-align: center;
+    // background-color: $f7;
     position:relative; z-index: 0;
-    &::before{@include before();height: 170px; background-color: $blue;}
+    // &::before{@include before();height: 170px; background-color: $blue;}
 
-    .faq {display: inline-block; margin-left:1%; float: left;
-      width:29%; text-align: left;
+    .faqs {display: inline-block; margin:1.4%; float: left;
+      width:30%; text-align: center; height:200px;
       padding: 40px 20px;
-      &.top {text-align: center;}
 
-      h4 {font-size: 1.1rem;margin-bottom: 5px; font-weight:bold;}
-      p{color: $white;margin-bottom: 0;}
+      h4 {margin-bottom: 5px; font-weight:bold;}
+      p{margin-bottom: 0;}
     }
 
     .faq-grid, .faq-grid2 {@include sec-grid(left, 45%); padding: 45px 2% 0;
@@ -427,7 +382,7 @@ a {
 .toy-time {
 
   .full-page{ @include sec-default();
-    @include sec-bgimage('water-sketch.png'); background-repeat: repeat;
+    @include sec-bgimage('grunge.png'); background-size: 10%; background-repeat: repeat;
     position: relative;z-index: 0;&::before{@include before(); background-color: rgba($f9, .85);}
     padding:80px 0;
     // @include gradient($lt-blue, $navy);
