@@ -1,11 +1,12 @@
-
+<% @page_title = "Welcome" %>
+<% @page_description = "Welcome" %>
 
 <!-- https://stock.adobe.com/search/images?serie_id=200462349 -->
 <div uk-parallax="bgy: -200" class="site-intro">
 	<div class="inner">
 		<!-- <h1><span>Welcome to</span><br> Gulf Adventure <b>Charters!</b></h1> -->
 		<h1>Call us today to book your next boating adventure!</h1>
-		<a href="tel: +12514243430" class="phone-link">1.251.424.3430</a>
+		<div class="phone-link"><%= phone %></div>
 	</div>
 </div>
 <div class="wave-div"></div>
@@ -49,8 +50,13 @@
 			<div class="clearfix"></div>
 
 			<div class="link-row">
-				<%= link_to "Toy Time Details", "/toy-time", class:"lr-link one" %>
-				<%= link_to "Charter FAQ's", "/FAQ", class:"lr-link two" %>
+				<%= link_to "/toy-time", class:"lr-link one" do %>
+					<p>Toy Time Details</p>
+				<% end %>
+
+				<%= link_to "/FAQ", class:"lr-link two" do %>
+					<p>Charter FAQ's</p>
+				<% end %>
 			</div>
 
 		</div>
@@ -58,8 +64,9 @@
 </div>
 
 <div class="sec4">
-	<div class="inner">
-		<p>Celebrating?? A PRIVATE boat charter is the perfect way to celebrate an anniversary, a graduation, a birthday, or anything else you might be celebrating!!</p>
+	<div class="text-box">
+		<h4>Celebrating? </h4>
+		<p>A PRIVATE boat charter is the perfect way to celebrate an anniversary, a graduation, a birthday, or anything else you might be celebrating!</p>
 	</div>
 </div>
 
