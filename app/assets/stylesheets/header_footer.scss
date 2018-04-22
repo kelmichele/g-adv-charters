@@ -57,12 +57,15 @@ header.site-header {@include sec-default(); text-align: center;
 
 	.inner {width: 75%;}
 
+  .grad-link {@include gradient($lt-blue, $navy);}
 	.foot-block {@include sec-grid(left, 32%);margin-left:1%;}
-	.ft-nav {padding-top:20px;
-		li {@include sec-grid(left, 40%);}
+	.ft-nav {
+		li {@include sec-grid(left, 40%); margin:10px 0;}
+    font-weight: bold;
 		.logo-nav{display: none; }
 	}
-	p, li a{font-size:16px;}
+	p, li a{font-size:16px; }
+  p{color:$navy;}
 
 }
 
