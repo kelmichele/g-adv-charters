@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 	get 'faq', to: 'static_pages#faq'
 	get 'location', to: 'static_pages#location'
 	get 'toy-time', to: 'static_pages#toy-time'
+	get 'page', to: 'static_pages#page'
 end

@@ -4,7 +4,10 @@
 // @import "variables";
 
 body {
-  a, li, p, h5, h4, h3, h2, h1 {font-family:$open; margin-top:0; color: $navy; line-height: 1.8em;}
+  a, li, p, h5, h4, h3, h2, h1 {font-family:$open; margin-top:0; color: $navy; line-height: 1.8em;
+		&.raleway{font-family: $raleway;}
+		&.chels{font-family: $chels;}
+  }
   p{font-size: 16px;}
 }
 

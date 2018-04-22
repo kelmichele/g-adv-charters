@@ -4,67 +4,61 @@
 /*****************************************/
 /***************HEADER*******************/
 /*****************************************/
-header { @include sec-default(); text-align: center; background-color: $white;
-	.inside{@include sec-default();}
-  nav {@include sec-default(); box-shadow: 0px 1px 2px rgba($black, .3);
-	  &.uk-sticky.uk-sticky-fixed.uk-active{background-color: $white;box-shadow: 0px 1px 1px rgba($black, .2);
-	  }
+
+// header.site-header{ position: absolute; background-color: transparent;
+//   height:212px;
+//     .sitenav li.navlink a{color: $white;}
+//     nav {background-color: transparent;@include ease();
+//       &.uk-sticky.uk-sticky-fixed.uk-active{background-color: $white;  }
+//     }
+//   }
+
+header.site-header {@include sec-default(); text-align: center;
+  .upper-hd {@include sec-default(); padding: 5px 0;
+    .logo-img{width:150px; @include center-block();}
   }
 
-  .sitenav {width: 80%; @include center-block(); padding:10px 0;
-      // position: relative;z-index: 0;
-      // &::before{@include before(); width: 220px; height:220px; background-color: #f3f3f3; left: 38.5%; border-radius: 45%;}
+  nav {
+    @include sec-default(); @include ease();
+    // display: inline-block; float: left;width: 65%; margin-left: 4%;
+    &.uk-sticky.uk-sticky-fixed.uk-active{box-shadow: 0px 1px 1px rgba($black, .2);background-color: $white; }
   }
+
+  .sitenav {width: 75%; @include center-block(); padding:10px 0;}
   .sitenav li{display: inline-block; width:15%;
-    // &.nav1, &.nav2{float: left;}
-    // &.nav3, &.nav4{float: right;}
-    &.navli {margin: 0px 2% 0; vertical-align:middle;}
-    &.logo-nav {width: 155px; @include ease(); margin-top: 7px; margin-bottom: 0;}
+    &.navli {margin: 0px 2% 0; margin-top: 65px;}
+    &.nav1, &.nav2{float: left;}
+    &.nav3, &.nav4{float: right;}
+    &.logo-nav {width: 135px; @include ease(); margin-top: 7px; margin-bottom: 0;}
     .navlink {font-family: $raleway; font-size:18px;}
   }
 
-  // .logo-link{position: absolute; width: 20%; left: 40%; padding:0px 5px 15px; margin-top:10px; border-radius: 50%; background-color: #f3f3f3;
-  //   .logo-img {width: 165px;@include center-block();}
+  // .logo-link{display:inline-block; float: left;width: 25%; padding:5px;
+  //   .logo-img{width:130px; @include center-block();}
   // }
-
-  .upper{width:50%; float:right; padding-top:10px;
-   	.hd-social, p{display: inline-block; }
-   	i{ margin-left: 10px;}
-   	p{margin-left: 15px; font-size: 16px; letter-spacing: 1px;}
- 	}
-
- 	nav.uk-sticky.uk-sticky-fixed.uk-active .sitenav li.logo-nav {width: 95px;}
 }
-
-// body {position: relative; z-index: 0;
-// 	&::before {@include before();background-color: $lt-blue; height:400px;}
-// }
-// header.style2 {@include sec-default(); text-align: center;
-// 	.upper-bar{@include sec-default();background-color: $white; box-shadow: 0px 1px 1px rgba($black, .2); position: relative;z-index: 1;}
-// 	.lower-header{@include sec-default(); background-color: transparent;}
-
-//   nav { @include sec-grid(left, 50%); margin-left:5%;}
-//   .social { @include sec-grid(right, 20%); }
-//   .sitenav li{display: inline-block; float: left;
-//     &.navli {margin: 10px 2% 0;}
-//     .navlink {font-family: $raleway; font-size:18px;}
-//   }
-//   .ss-link{display: inline-block; margin:10px 3%;}
-
-//   .logo-nav {width: 135px; display: inline-block; float: none; margin:-50px auto 10px; position: relative;z-index: 2;}
-// }
 
 
 /*****************************************/
 /***************FOOTER*******************/
 /*****************************************/
-.site-footer { @include sec-default(); text-align: center; padding:15px 0;
+.site-footer { @include sec-default(); text-align: center; padding:0px 0 30px;
+  // overflow-x: hidden;
 	background-color: $lt-blue;
+  position: relative;z-index: 0;
+  &::before {@include before();
+    // height:60%;width:110%;left: -2%; top: -4%;
+    // background-color: $blue; @include rotate(-5deg);
+    top: -78%;
+    background: -webkit-linear-gradient(-122deg, $lt-blue 55%, transparent 40%);
+    background: linear-gradient(-4deg, $lt-blue 55%, transparent 40%);
+
+  }
 
 	.inner {width: 75%;}
 
 	.foot-block {@include sec-grid(left, 32%);margin-left:1%;}
-	.ft-nav {
+	.ft-nav {padding-top:20px;
 		li {@include sec-grid(left, 40%);}
 		.logo-nav{display: none; }
 	}
