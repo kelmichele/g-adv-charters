@@ -13,21 +13,12 @@ ul {padding-left:0;}
   background-image: url(image_path('sea-less.png'));background-repeat: repeat;background-size: 70%;
 }
 
-.full-page{@include sec-default();padding: 60px 0;}
-
-.custom-banner {@include sec-default(); height: 400px;
-  background-image: url(image_path('water-vert.jpg')), url(image_path('tt1.jpg'));
-  background-position: top left, center right; background-size: 25%, 75%; background-repeat: no-repeat;
-  position: relative; z-index: 0;
-  &::before {@include before(); width:25%; background-color: rgba($navy, .7);}
-  .inner {padding: 30px 0; width:40%; float: left; margin-left: 15%; }
-  h1, h3 {color: $white; @include tshadowl($black);}
-}
+.full-page{@include sec-default();}
 
 .hd-grad{@include sec-default(); padding: 6% 0;
   @include sec-bgimage('boat-view4.jpg');background-position:center center;
   position: relative;z-index: 0; &::before {@include before(); height: 5px; background-color: white; top: 49%;}
-  h1{font-family: $chels; letter-spacing: 1px; text-transform: uppercase; font-weight: bold;}
+  h1{@include chels();}
   .box-text {background-color: $orange; width: 33%; border:5px solid white; @include center-block(); padding: 2% 15px; text-align: center;
     position: relative;z-index: 0;
     &::before {@include before(); background-color: white; width:5px; margin-top: -104px; left: -5px;}
@@ -36,7 +27,11 @@ ul {padding-left:0;}
 }
 
 .book-btn {background-color: $blue; padding: 7px 20px; border-radius: 4px; box-shadow: 0px 0px 5px rgba(black, .3); color: $white; font-weight: bold;}
-.grad-link {width: auto; padding: 10px 30px; @include gradient($lt-blue, $blue); color: $white; font-weight: bold; border-radius:5px; letter-spacing: 1.5px; text-transform: uppercase;}
+.grad-link {width: auto; padding: 10px 30px; @include gradient($lt-blue, $blue); color: $white; font-weight: bold; border-radius:5px; letter-spacing: 1.5px; text-transform: uppercase;
+  // background: -webkit-linear-gradient(-122deg, $yellow 50%, $orange 50%);
+  // background: linear-gradient(-4deg, $yellow 50%, $orange 50%);
+
+}
 
 
 .kgrid{@include sec-default();
@@ -50,58 +45,54 @@ a {
   text-decoration: none;
   &:hover{text-decoration: none;opacity: .7;}
 }
-// p{font-size:17px;}
 
-/*****************************************/
-/*****************************************/
-/*****************************************/
 .top-diag {@include sec-default();background-color: $yellow;
-  position: relative;z-index: 0;
   // padding: 220px 0 40px;
   padding: 60px 0 0px;
+  position: relative;z-index: 0;
   &::before{@include before(); height:100px; top:85%;
     background: -webkit-linear-gradient(-122deg, $f8 50%, $yellow 50%);
     background: linear-gradient(-4deg, $f8 50%, $yellow 50%);
   }
-  h1{font-family: $chels; letter-spacing: 1px; text-transform: uppercase; font-weight: bold;}
+  h1{@include chels();}
 
   .text{width: 60%; margin-left: 10%;}
 }
 
+/*****************************************/
+/*****************************************/
+/*****************************************/
+
+
 .home {overflow-x: hidden;
   header{position: absolute; background-color: transparent;
     .sitenav li.navlink a{color: $white;}
-    // nav{background-color: transparent;}
     nav {background-color: transparent;@include ease();
       &.uk-sticky.uk-sticky-fixed.uk-active{background-color: $white;  }
     }
   }
 
-  p {font-size: 16px;color: $light;}
-
-  .wave-div{margin-top:-65px;background-size: 60%;}
 
   .site-intro {
     @include sec-default();@include sec-bgimage('header-img.jpg'); background-size:cover;
     height: 700px;
-
-    padding: 80px 40px;
+    padding: 140px 40px;
     text-align: center;
+
+    .inner{margin-top:100px;}
     h1, h2, .phone-link{ text-shadow: 0px 1px 1px rgba($navy, .9);}
-    h1 {font-size:40px; line-height: 1.5em; text-transform: uppercase;  font-family: $chels; line-height: 1.2em;
-      margin-top:100px;
-      span{font-size: 30px;color: $white;}
-      b{color: $lt-blue;}
-    }
     h2{color:$white; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
-    .phone-link {font-family: $chels; color: $orange; font-size: 44px;}
+    .phone-link {@include chels(); color: $orange; font-size: 44px; margin-bottom: 20px;}
+
+    .book-btn{}
   }
 
-  h1 {font-size:40px; line-height: 1.5em; text-transform: uppercase;  font-family: $chels; line-height: 1.2em;
+  h1 {font-size:40px; line-height: 1.5em; @include chels(); line-height: 1.2em;
       span{font-size: 30px;color: $yellow;}
       b{color: $blue;}
       width:60%; @include center-block();
   }
+  p {font-size: 16px;color: $light;}
 
   .sec1, .sec2, .sec3, .sec4 {@include sec-default(); padding: $fw-pad;
     .inner {width:80%;}
@@ -111,22 +102,25 @@ a {
     .text {width: 65%; @include center-block();}
   }
 
-  .sec2 {padding-top:0; background-color: $f9;
+  .sec2 {padding:0;
     @include sec-default(); position: relative;z-index: 0;
-    &::before{@include before(); height:80%; @include sec-bgimage('water-sketch-orange.jpg');}
-    // &::after{@include before(); height:6%; background-color: $f7; top: 94%;}
+    background-color: $orange;
+
+    // &::after{@include before(); height:80%; background-color: rgba($orange, .9);}
+    // &::before{@include before(); height:80%; @include sec-bgimage('grunge.png'); background-size: 20%; background-repeat: repeat;}
+
     .inner{width:75%;}
 
     .left {width: 45%; display:inline-block; float: left;  background-color: transparent; margin-top:-3%;}
     .text-box {width: 44%; float: right; display: inline-block; margin-top:200px; background-color: $white; padding:30px 5%;
-      h4{font-weight: bold; font-family: $chels; letter-spacing: 1px; text-transform: uppercase; font-size:18px;}
+      h4{@include chels(); font-size:18px;}
       .grad-link {@include gradient(rgba($orange, .85), $orange);}
     }
   }
 
   .sec3 {background-color: $f9; position: relative; z-index: 0;padding:60px 0 130px;
     .inner{width:75%;}
-    h3{font-weight: bold;margin-bottom:5px;}
+    h3{font-weight: bold;margin-bottom:5px;@include chels();}
     .image, .content-hlf {@include sec-grid(right, 50%);}
     .content-hlf{float:left; width: 48%;}
 
@@ -169,12 +163,9 @@ a {
       // background: -webkit-linear-gradient(-102deg, darken($blue, 15%) 19%, transparent 81%);
       // background: linear-gradient(12deg, darken($blue, 15%) 19%, transparent 81%);
     }
-    h4 {color: $navy; font-size: 25px; font-family: $chels; letter-spacing: 1px; text-transform: uppercase;}
+    h4 {color: $navy; font-size: 25px; @include chels();}
   }
 
-  @include bp(xl) {
-    // p {font-size: 18px;}
-  }
   footer p{color:$navy;}
 }
 
@@ -183,40 +174,42 @@ a {
   .title-line {width: 10%; height: 1px; background-color: $navy; margin: 0 auto 20px;
     &.left{margin: 0 0 20px;}
   }
-  .full-page {padding-bottom: 0;
-    .inner {width:90%;}
-  }
 
-  h2{font-family: $chels; letter-spacing: 1px; text-transform: uppercase; font-weight: bold;}
+  .inner {width:90%;}
+
+  h2{@include chels();}
   h3 {font-weight: bold;}
-  p{margin-bottom: 10px;}
+  p{margin-bottom: 10px; font-size: 17px;}
 
-  .top-diag {background-color: $orange;
+  .top-diag {background-color: $navy;
     &::before{
-      background: -webkit-linear-gradient(-122deg, $white 50%, $orange 50%);
-      background: linear-gradient(-4deg, $white 50%, $orange 50%);
+      background: -webkit-linear-gradient(-122deg, $white 50%, $navy 50%);
+      background: linear-gradient(-4deg, $white 50%, $navy 50%);
     }
+    h1{color: white;}
   }
 
-  .intro {width:65%; @include center-block();text-align: center; padding:50px 0 70px;
-    p{color: $light;}
+  .intro {width:70%; @include center-block();text-align: center; padding:90px 0 50px;
+    position: relative;z-index: 1;
+    p{color: darken($light, 15%);}
   }
 
   .contact-info {
     @include sec-default(); padding:$fw-pad; text-align: center;
-    background-color: $f8;
-
+    @include sec-bgimage('grunge.png'); background-size: 20%; background-repeat: repeat;
+    position: relative; z-index: 0;
+    &::before{@include before(); background-color: rgba($f9, .9);}
 
     .image-hlf, .text-hlf {@include sec-grid(left, 40%); position: relative;z-index: 1;}
     .image-hlf {margin-left:8%; width:44%;}
-    .text-hlf { z-index: 2; background-color: white; padding: 40px; margin-top: 2%;
+    .text-hlf { z-index: 2; background-color: white; padding: 40px; margin-top: 1.2%;
       &::before {@include before(); border: 3px solid $blue; height: 90%; top:5%; left: -5%;}
     }
 
-    h4 {margin-bottom: 5px; font-weight: bold; color: $blue; font-family: $chels; letter-spacing: 1px; text-transform: uppercase;}
+    h4 {margin-bottom: 5px; font-weight: bold; color: $blue; @include chels();}
     .title-line {background-color: $blue; height:2px;}
     .blk{width: 90%; text-align: center; margin: 20px 0;}
-    p {line-height: 1.55em; font-size:16px; letter-spacing: .5px; margin-bottom:15px;
+    p {line-height: 1.55em; font-size:17px; letter-spacing: .5px; margin-bottom:15px;
       span{font-size:16px; color: $navy; font-weight: bold;}
       b{font-weight: 600;}
     }
@@ -246,18 +239,19 @@ a {
   }
 
 
-  .payment-info{@include sec-default(); padding: 50px 0 130px; background-color: $blue;
-    .inner {width:75%; text-align: center;}
+  .payment-info{@include sec-default(); padding: 50px 0 130px; background-color: $orange;
+    // .inner {width:75%; text-align: center;}
     .pay1, .pay2{@include sec-grid(none, 40%); margin-left:5%;}
-    h2{margin-bottom: 45px; color: white; text-shadow: 0px 1px 1px rgba($navy, .5);}
+    .pay1{margin-left: 10%;}
+    h2{margin-bottom: 45px; color: white; text-shadow: 0px 1px 1px rgba($navy, .5); text-align: center;}
     h3{margin-bottom: 7px; color: white;}
     p{font-weight: 600;}
   }
 }
 
 .charters {
-  .top-diag {margin-bottom: 60px;
-    .text{width: 50%; margin-left: 0;}
+  .top-diag {margin-bottom: 80px;
+    .text{width: 55%; margin-left: 0;}
     &::before{top:100%;
       background: -webkit-linear-gradient(-122deg, transparent 50%, $yellow 50%);
       background: linear-gradient(-4deg, transparent 50%, $yellow 50%);
@@ -281,7 +275,6 @@ a {
 
     &:nth-child(2n+2) {float: right;}
 
-
     .co-icon {@include center-block();width:23%;display: inline-block;float: left;}
     .icon {height:120px; @include center-block(); margin-top:55%;}
 
@@ -289,7 +282,7 @@ a {
       padding:30px 30px 20px; margin-top:10px;
     }
     .title-line {width: 15%; height: 2px; background-color: $navy; margin-bottom: 20px;}
-    h4 {font-size: 1.3rem; letter-spacing: 1px; font-family: $chels; text-transform: uppercase; margin-bottom: 7px; font-weight: bold;}
+    h4 {font-size: 1.3rem; @include chels();margin-bottom: 7px;}
     .book-btn{font-style: italic; color: white; padding: 7px 15px; float: right; background-color: $yellow;font-weight: bold;box-shadow: 0px 0px 10px rgba($black, .2);}
     p span{font-size:15px; color: darken($light, 10%); color:darken($orange, 10%); font-weight: bold;}
 
@@ -341,14 +334,12 @@ a {
     }
   }
 
-
   .callout {@include sec-default();
     // padding: 100px 0 80px;
     padding: 60px 0 80px;
-    // background-color: $f9; @include sec-bgimage('water-sketch.png'); background-position: center center;
     .inner{width: 90%;}
     .text-blk {display: inline-block; width: 32%; margin-left: 1%; float: left; background-color: white; padding: 30px;}
-    h4 {color: $navy; font-family: $chels; letter-spacing: 1px; text-transform: uppercase; font-weight: bold; margin-bottom: 4px;}
+    h4 {color: $navy; @include chels(); margin-bottom: 4px;}
 
 
 
@@ -371,8 +362,6 @@ a {
       background: -webkit-linear-gradient(-122deg, $yellow 50%, rgba(black, .45) 25%);
       background: linear-gradient(115deg, $yellow 50%, rgba(black, .45) 25%);
     }
-
-
   }
 
   @include bp(tb) {
@@ -389,10 +378,9 @@ a {
 }
 
 .faq {
-  .uk-background-cover {background-image: url(image_path('water-close.jpg')); position: relative;z-index: 0;}
-  .faq-hd {@include sec-default();background-image: url(image_path('water-close.jpg'));height:250px; background-position: center center; }
 
-  .top-diag {padding-bottom:20px;
+  .top-diag {
+    // padding-bottom:20px;
     &::before{
       background: -webkit-linear-gradient(-122deg, $white 50%, $yellow 50%);
       background: linear-gradient(-4deg, $white 50%, $yellow 50%);
@@ -415,16 +403,17 @@ a {
       &::before{@include before(); width: 4px; height: 100%; background-color: $blue;}
     }
 
-    h1{font-weight: bold; font-family: $chels; color: $orange; }
+    h1{@include chels(); text-transform: none; color: $orange; }
     h3 {font-size: 17px;}
     .top-menu a {@include sec-default(); margin-bottom:5px; color: $blue; font-size:1.2rem; display: none;}
   }
 
-  // .full-page{background-color: $f8;}
+  .intro {@include sec-default(); text-align: center; margin-top:40px; padding:60px 0 25px;}
 
-  .faqs-full{@include sec-default(); padding:70px 0;
+  .faqs-full{@include sec-default(); padding:70px 0; background-color: white;
     position: relative; z-index: 0;
     &::before {@include before(); width: 1.5px; height:90%; background-color: rgba($navy, .2); top:5%; left: 50%;}
+
     .inner {width: 80%;}
     .left, .right {@include sec-grid(left, 48%); }
     .left{text-align: right;}
@@ -440,15 +429,8 @@ a {
 }
 
 .toy-time {
-  // header{position: absolute; background-color: transparent;z-index: 10;
-  //   .sitenav li.navlink a{color: $white;}
-  //   nav {background-color: transparent;@include ease();
-  //     &.uk-sticky.uk-sticky-fixed.uk-active{background-color: $white;  }
-  //   }
-  // }
 
-  .full-page{ @include sec-default();
-    // position: relative;z-index: 0;&::before{@include before(); background-color: rgba($f8, .85);}
+  .full-display{ @include sec-default();
     padding:80px 0;
 
     .full-section{@include sec-default(); box-shadow: 0px 5px 25px rgba($black, .2);
@@ -460,13 +442,14 @@ a {
       .img-sec {float: right;}
 
       li {font-size: 18px; margin-bottom:7px; text-transform: uppercase; letter-spacing: 1px}
-      h2{margin-bottom:0;font-family: $chels; letter-spacing: 1px; text-transform: uppercase; }
-      h1{font-family: $chels; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; line-height: 1em;}
+      h2{margin-bottom:0;@include chels(); }
+      h1{@include chels(); letter-spacing: 2px; line-height: 1em;}
     }
   }
 
-  h2{margin-bottom:0;font-family: $chels; letter-spacing: 1px; text-transform: uppercase; }
-  h1{font-family: $chels; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; line-height: 1em;}
+  h2{margin-bottom:0;@include chels(); }
+  h1{@include chels(); letter-spacing: 2px; line-height: 1em;}
+
 
   .full-toy{ @include sec-default(); padding:$fw-pad; background-color: $f8; margin: 40px 0;
     .inner{width: 75%;}
@@ -478,7 +461,7 @@ a {
         box-shadow: 0px 0px 15px rgba($black, .1); margin-left: -3%;
       }
 
-      h4{font-size: 18px; font-family: $chels; letter-spacing: 1px; color:$navy; margin-bottom: 4px; line-height: 1.2em;}
+      h4{font-size: 18px; @include chels(); text-transform: none; font-weight: normal; color:$navy; margin-bottom: 4px; line-height: 1.2em;}
       p {line-height: 1.6em;  color: $blue; padding-left: 5px; margin-bottom: 20px;}
     }
   }
@@ -487,7 +470,7 @@ a {
     background-color: $white;text-align: center;
       .links {@include sec-grid(left, 40%); margin-left:5%; margin-bottom: 30px;
          padding: 25px 30px;
-        font-size: 18px; font-weight: bold; font-family: $chels; letter-spacing: 1px;
+        font-size: 18px; @include chels(); text-transform: none;
       }
   }
 
@@ -496,22 +479,27 @@ a {
 
 
 .page {
-  header{background-color: transparent;margin-bottom:40px; a {color: white;}}
 
-  .bg-wrap {@include sec-default();
-    padding: 15px 5% 0;
-    background-color: $white;
-    @include sec-bgimage('paper1.jpg'); background-repeat: repeat;
+  // position: relative;z-index: 0;
+  // background-color: #f3f3f3;
+  // &::before {@include before(); height: 600px;
+  //   background: -webkit-linear-gradient(-122deg, transparent 30%, $blue 30%);
+  //   background: linear-gradient(-6deg, transparent 30%, $blue 30%);
+  // }
 
-    position: relative;z-index: 0;
-    &::before {@include before(); height: 600px;
-      background: -webkit-linear-gradient(-122deg, transparent 30%, $blue 30%);
-      background: linear-gradient(-6deg, transparent 30%, $blue 30%);
+  // header{background-color: transparent;margin-bottom:40px; a {color: white;}}
+
+  .inner {width: 90%;}
+  .top-diag {background-color: $navy;
+    &::before{
+      background: -webkit-linear-gradient(-122deg, $white 50%, $navy 50%);
+      background: linear-gradient(-4deg, $white 50%, $navy 50%);
     }
-    &::after {@include before();z-index: -2; top:40px; height: calc(100% - 80px); background-color:rgba(white, .7);}
+
+    h1 {color: white;}
   }
 
-  .full-page {background-color: $f7; padding-top:0;
+  .full-page {background-color: $white; padding-top:0;
     box-shadow: 0px 0px 10px rgba(black, .35);
     // position: relative;z-index: 0;
 

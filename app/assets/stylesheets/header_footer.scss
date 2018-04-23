@@ -30,12 +30,9 @@ header.site-header {@include sec-default(); text-align: center;
     &.nav1, &.nav2{float: left;}
     &.nav3, &.nav4{float: right;}
     &.logo-nav {width: 135px; @include ease(); margin-top: 7px; margin-bottom: 0;}
-    .navlink {font-family: $raleway; font-size:18px;}
+    .navlink {font-family: $raleway; font-size:18px; color: $white;}
   }
 
-  // .logo-link{display:inline-block; float: left;width: 25%; padding:5px;
-  //   .logo-img{width:130px; @include center-block();}
-  // }
 }
 
 
@@ -43,16 +40,12 @@ header.site-header {@include sec-default(); text-align: center;
 /***************FOOTER*******************/
 /*****************************************/
 .site-footer { @include sec-default(); text-align: center; padding:0px 0 30px;
-  // overflow-x: hidden;
-	background-color: $lt-blue;
+  background-color: $blue;
   position: relative;z-index: 0;
   &::before {@include before();
-    // height:60%;width:110%;left: -2%; top: -4%;
-    // background-color: $blue; @include rotate(-5deg);
     top: -78%;
-    background: -webkit-linear-gradient(-122deg, $lt-blue 55%, transparent 40%);
-    background: linear-gradient(-4deg, $lt-blue 55%, transparent 40%);
-
+    background: -webkit-linear-gradient(-122deg, $blue 55%, transparent 40%);
+    background: linear-gradient(-4deg, $blue 55%, transparent 40%);
   }
 
 	.inner {width: 75%;}
@@ -69,4 +62,8 @@ header.site-header {@include sec-default(); text-align: center;
 
 }
 
+.site-footer{background-color: $white; padding-top:20px;
+  box-shadow: 0px 2px 3px rgba(black, .35);
+  &::before {display: none;}
+}
 

@@ -10,17 +10,18 @@
 	</div>
 </div> -->
 
-<div class="top-diag">
-	<div class="inner">
-		<div class="text">
-			<h1>Contact Us</h1>
-			<!-- <h2>The Charter Boat</h2> -->
+<div class="full-page">
+	<div class="top-diag">
+		<div class="inner">
+			<div class="text">
+				<h1>Contact Us</h1>
+				<!-- <h2>The Charter Boat</h2> -->
+			</div>
 		</div>
 	</div>
-</div>
+	<div class="clearfix"></div>
 
 
-<div class="full-page">
 	<div class="inner">
 		<div class="intro">
 			<h2>Gulf Adventure Charters</h2>
@@ -34,7 +35,7 @@
 	</div>
 
 	<div class="contact-info">
-		<div class="inner">
+		<div class="inside">
 			<div class="image-hlf">
 				<%=image_tag('tt6.jpg', class: 'img-responsive', alt: '') %>
 			</div>
@@ -56,8 +57,13 @@
 						<p><span>Phone: </span><br> 251.424.3430</p>
 						<p><span>Email: </span><br> info@boatgulfadventurecharters.com</p>
 						<div class="social">
-							<i class="uk-icon" uk-icon="facebook"></i>
-							<i class="uk-icon" uk-icon="instagram"></i>
+							<%= link_to"/fb", :target => "_blank" do %>
+								<i class="uk-icon" uk-icon="facebook"></i>
+							<% end %>
+
+							<%= link_to "/insta", :target => "_blank" do %>
+								<i class="uk-icon" uk-icon="instagram"></i>
+							<% end %>
 						</div>
 
 						<%= link_to "Book Now", "", class: 'grad-link', target: '_blank' %>
@@ -67,42 +73,24 @@
 
 		</div>
 	</div>
-</div>
 
-	<!-- <div class="inner">
-		<div class="contact-box">
-	    <div class="text">
-	    	<div class="blk">
-		    	<p><span>Flora-Bama Marina:</span><br>
-					29603 Perdido Beach Blvd<br>
-					Orange Beach, AL 36561<br>
-					<b>Slip: 123</b></p>
-				</div>
+	<div id="payments" class="payment-info">
+		<div class="inner">
+	  	<h2>Payment Info</h2>
+	  	<div class="pay1">
+				<h3>Forms of Payment:</h3>
+				<!-- <div class="title-line"></div> -->
+				<!-- <div class="clearfix"></div> -->
+				<p> Cash or Credit Card. <br>A $100 deposit is required at the time of booking.</p>
+			</div>
 
-				<div class="blk">
-					<p><span>Phone: </span><br> 251.424.3430</p>
-					<p><span>Email: </span><br> info@boatgulfadventurecharters.com</p>
-				</div>
-	    </div>
+			<div class="pay2">
+				<h3>Cancellation Policy:</h3>
+				<!-- <div class="title-line"></div> -->
+				<!-- <div class="clearfix"></div> -->
+				<p> All reservations canceled within 48 hours of their scheduled charter will be charged in full.</p>
+			</div>
 	  </div>
-	</div> -->
+	</div>
 
-<div id="payments" class="payment-info">
-	<div class="inner">
-  	<h2>Payment Info</h2>
-  	<div class="pay1">
-			<h3>Forms of Payment:</h3>
-			<!-- <div class="title-line"></div> -->
-			<!-- <div class="clearfix"></div> -->
-			<p> Cash or Credit Card. <br>A $100 deposit is required at the time of booking.</p>
-		</div>
-
-		<div class="pay2">
-			<h3>Cancellation Policy:</h3>
-			<!-- <div class="title-line"></div> -->
-			<!-- <div class="clearfix"></div> -->
-			<p> All reservations canceled within 48 hours of their scheduled charter will be charged in full.</p>
-		</div>
-  </div>
 </div>
-

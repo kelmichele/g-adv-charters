@@ -1,19 +1,22 @@
 <% @page_title = "Welcome" %>
 <% @page_description = "Welcome" %>
+<!-- https://creativemarket.com/appler/909277-WATERCOLOR-BACKGROUNDS -->
+<!-- https://creativemarket.com/appler/909277-WATERCOLOR-BACKGROUNDS/screenshots/#screenshot5 -->
 
-<!-- https://stock.adobe.com/search/images?serie_id=200462349 -->
 <div uk-parallax="bgy: -200" class="site-intro">
 	<div class="inner">
 		<!-- <h1><span>Welcome to</span><br> Gulf Adventure <b>Charters!</b></h1> -->
 		<h1>Call us today to book your next boating adventure!</h1>
 		<div class="phone-link"><%= phone %></div>
+
+		<%= link_to "/book", :target => "_blank", class: "book-btn grad-link" do %>
+			Book Online Now
+		<% end %>
 	</div>
 </div>
-<!-- <div class="wave-div"></div> -->
 
 <div class="sec1">
-	<h1><span>Welcome to</span><br> Gulf Adventure <b>Charters!</b></h1>
-
+		<h1><span>Welcome to</span><br> Gulf Adventure <b>Charters!</b></h1>
 	<div class="inner">
 		<div class="text">
 			<h3>Located at the Flora-Bama Marina on the AL/FL line, we are in the heart of Orange Beach, AL and only minutes away from Gulf Shores, AL and Perdido Key, FL. </h3>

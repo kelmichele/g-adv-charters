@@ -6,4 +6,8 @@ Rails.application.routes.draw do
 	get 'location', to: 'static_pages#location'
 	get 'toy-time', to: 'static_pages#toy-time'
 	get 'page', to: 'static_pages#page'
+
+	get 'fb', to: 'links#fb'
+	get 'insta', to: 'links#insta'
+
 end

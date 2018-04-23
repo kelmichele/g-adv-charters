@@ -3,8 +3,13 @@
     <div class="inner">
       <div class="hd-social">
         <i class="uk-icon" uk-icon="mail"></i>
-        <i class="uk-icon" uk-icon="facebook"></i>
-        <i class="uk-icon" uk-icon="instagram"></i>
+        <%= link_to"/fb", :target => "_blank" do %>
+                  <i class="uk-icon" uk-icon="facebook"></i>
+                <% end %>
+
+                <%= link_to "/insta", :target => "_blank" do %>
+                  <i class="uk-icon" uk-icon="instagram"></i>
+                <% end %>
       </div>
       <p class="phone-hd"><%= phone %></p>
     </div>
