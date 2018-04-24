@@ -33,6 +33,13 @@ header.site-header {@include sec-default(); text-align: center;
     .navlink {font-family: $raleway; font-size:18px; color: $white;}
   }
 
+  .upper {@include sec-default(); padding: 5px 0;
+    // background-color: $white;
+    .hd-social, .phone-hd {display:inline-block; float: left;}
+    .phone-hd{float: right;}
+
+    i {margin-right: 20px;}
+  }
 }
 
 

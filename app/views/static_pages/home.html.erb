@@ -28,45 +28,47 @@
 	</div>
 
 	<div class="sec2">
-		<div class="inner">
-			<div class="left"><%= image_tag('stock3.jpg', alt: '', class:'img-responsive')%></div>
+			<div class="inner">
+				<div class="text-box">
+					<h4>Are you ready for an adventure?</h4>
+					<p>We offer PRIVATE boat charters to explore the beautiful waterways, islands, and wildlife in Orange Beach, Alabama.
+					Choose from our list of charters, or build your own. Whatever suits your interests! </p>
 
-			<div class="text-box">
-				<h4>Are you ready for an adventure?</h4>
-				<p>We offer PRIVATE boat charters to explore the beautiful waterways, islands, and wildlife in Orange Beach, Alabama.
-				Choose from our list of charters, or build your own. Whatever suits your interests! </p>
-
-				<p>Relax and enjoy all the area has to offer by water with your closest friends and family, while our USCG approved captain drives you around.</p>
-				<!-- og text <p>Enjoy all the area has to offer by water with your closest friends and family, while relaxing and being driven by a USCG approved captain.</p> -->
-				<%= link_to "Our Charters", "/charters", class:"grad-link" %>
+					<!-- <p></p> -->
+					<%= link_to "Our Charters", "/charters", class: "grad-link" %>
+				</div>
+				<div class="image"><%= image_tag('dolphins.png', alt: '', class: 'img-responsive')%></div>
 			</div>
 		</div>
-	</div>
 
-	<div class="sec3">
-		<div class="inner">
-			<div class="image"><%= image_tag('tt4.jpg', alt: '', class:'img-sec3')%></div>
+		<div class="sec3">
+			<div class="inner">
+				<div class="image"><%= image_tag('stock1.jpg', alt: '', class: 'img-sec3')%></div>
 
-			<div class="content-hlf">
-				<div class="text">
-					<h3>Toy Time</h3>
-					<p>From island hopping and sightseeing, to a quiet, sunset cruise, this 25ft Grady White is great way to entertain all ages!</p>
+				<div class="content-hlf">
+					<div class="text">
+						<!-- <h3>Toy Time</h3> -->
+						<h3>We've Got You Covered</h3>
+						<p>Relax and enjoy all the area has to offer by water with your closest friends and family, while our USCG approved captain drives you around.</p>
+						<p> From island hopping and sightseeing, to a quiet, sunset cruise, a Gulf Adventure Charter is a great way to entertain all ages!</p>
+						<!-- <%= image_tag('stock-splash.png', alt: '', class: 'img-responsive ch-img')%> -->
+					</div>
+					<div class="clearfix"></div>
+
+					<!-- <div class="link-row">
+						<%= link_to "/toy-time", class:"lr-link boat" do %>
+						<h4>The Charter Boat</h4>
+							<p>Toy Time</p>
+						<% end %>
+
+						<%= link_to "/FAQ", class:"lr-link two" do %>
+							<p>Charter FAQ's</p>
+						<% end %>
+					</div> -->
+
 				</div>
-				<div class="clearfix"></div>
-
-				<div class="link-row">
-					<%= link_to "/toy-time", class:"lr-link one" do %>
-						<p>Toy Time Details</p>
-					<% end %>
-
-					<%= link_to "/FAQ", class:"lr-link two" do %>
-						<p>Charter FAQ's</p>
-					<% end %>
-				</div>
-
 			</div>
 		</div>
-	</div>
 
 	<div class="sec4">
 		<div class="text-box">
