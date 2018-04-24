@@ -30,10 +30,10 @@ header.site-header {@include sec-default(); text-align: center;
     &.nav1, &.nav2{float: left;}
     &.nav3, &.nav4{float: right;}
     &.logo-nav {width: 135px; @include ease(); margin-top: 7px; margin-bottom: 0;}
-    .navlink {font-family: $raleway; font-size:18px; color: $white;}
+    .navlink {font-family: $raleway; font-size:18px; color: $white; font-weight: 600; letter-spacing: 1px;}
   }
 
-  .upper {@include sec-default(); padding: 5px 0;
+  .upper {@include sec-default(); padding: 5px 0; display: none;
     // background-color: $white;
     .hd-social, .phone-hd {display:inline-block; float: left;}
     .phone-hd{float: right;}
