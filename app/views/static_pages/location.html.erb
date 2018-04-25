@@ -15,30 +15,30 @@
 		<div class="inner">
 			<div class="text">
 				<h1>Contact Us</h1>
-				<!-- <h2>The Charter Boat</h2> -->
 			</div>
 		</div>
 	</div>
 	<div class="clearfix"></div>
 
+	<div class="intro">
+		<div class="inner">
+			<div class="image-hlf">
+				<%=image_tag('marina-ph.jpg', class: 'img-responsive', alt: '') %>
+			</div>
 
-	<div class="inner">
-		<div class="intro">
-			<h2>Gulf Adventure Charters</h2>
-			<p>We are located at the Flora-Bama Marina, on the AL/FL line, across from the world-famous Flora-Bama Bar.
-				Whether you are staying in Gulf Shores, Orange Beach, or Perdido Key, we are only minutes away!
-				Please contact us if you have any questions about our boat charters. We are happy to help!
-				<!-- We are happy to answer any questions you might have about our boat charters. -->
-				<br><span>We hope to see you soon!</span>
-			</p>
+			<div class="text-hlf">
+				<h2>Gulf Adventure Charters</h2>
+				<p>We are located at the Flora-Bama Marina, on the AL/FL line, across from the world-famous Flora-Bama Bar.
+					Whether you are staying in Gulf Shores, Orange Beach, or Perdido Key, we are only minutes away!
+					Please contact us if you have any questions about our boat charters. We are happy to help!
+					<br><span>We hope to see you soon!</span>
+				</p>
+			</div>
 		</div>
 	</div>
 
 	<div class="contact-info">
 		<div class="inside">
-			<div class="image-hlf">
-				<%=image_tag('tt6.jpg', class: 'img-responsive', alt: '') %>
-			</div>
 
 			<div class="text-hlf">
 		    <div class="text">
@@ -51,11 +51,10 @@
 						29603 Perdido Beach Blvd<br>
 						Orange Beach, AL 36561<br>
 						<b>Slip: 123</b></p>
-					</div>
 
-					<div class="blk">
 						<p><span>Phone: </span><br> 251.424.3430</p>
 						<p><span>Email: </span><br> info@boatgulfadventurecharters.com</p>
+
 						<div class="social">
 							<%= link_to"/fb", :target => "_blank" do %>
 								<i class="uk-icon" uk-icon="facebook"></i>
@@ -67,22 +66,31 @@
 						</div>
 
 						<%= link_to "Book Now", "", class: 'grad-link', target: '_blank' %>
-					</div>
-		    </div>
-		  </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="image-hlf">
+				<%=image_tag('tt6.jpg', class: 'img-responsive', alt: '') %>
+			</div>
 
 		</div>
 	</div>
 
+
 	<div id="payments" class="payment-info">
 		<div class="inner">
 	  	<h2>Payment Info</h2>
+			<hr class="uk-divider-icon one">
+
 	  	<div class="pay1">
 				<h3>Forms of Payment:</h3>
 				<!-- <div class="title-line"></div> -->
 				<!-- <div class="clearfix"></div> -->
 				<p> Cash or Credit Card. <br>A $100 deposit is required at the time of booking.</p>
 			</div>
+
+			<hr class="uk-divider-icon two">
 
 			<div class="pay2">
 				<h3>Cancellation Policy:</h3>
