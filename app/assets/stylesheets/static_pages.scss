@@ -67,21 +67,21 @@ a {
 
 .home {overflow-x: hidden;
 
-  // body{@include sec-default();
-  //   position: relative;z-index: 0;
-  //   &::before { display: none;}
-  // }
+  body{@include sec-default();
+    position: relative;z-index: 0;
+    &::before { display: none;}
+  }
 
-  // .bg-wrap{padding: 0;
-  //   position: relative;z-index: 0;
-  //   &::before, &::after {display: none;}
-  // }
-  // .full-page{box-shadow: none;}
+  .bg-wrap{padding: 0;
+    position: relative;z-index: 0;
+    &::before, &::after {display: none;}
+  }
+  .full-page{box-shadow: none;}
 
-  // header{position: absolute; background-color: transparent; z-index: 3;
-  //   .upper {background-color: transparent; display: none; .phone-hd {float:left; margin-left: 5%;}}
-  //   .sitenav {}
-  // }
+  header{position: absolute; background-color: transparent; z-index: 3;
+    .upper {background-color: transparent; display: none; .phone-hd {float:left; margin-left: 5%;}}
+    .sitenav {}
+  }
 
 
   .site-intro {
@@ -178,7 +178,7 @@ a {
   }
 
   .sec4 {background-color: $f9; padding: 80px 0 150px;
-    @include sec-bgimage('stock5.jpg'); background-size: 60%; background-position: right bottom;
+    @include sec-bgimage('cheers.jpg'); background-size: 60%; background-position: right bottom;
     .text-box {width: 30%; @include center-block(); padding:20px; float:left; margin-left: 5%;
       p{color: $navy; font-size:18px;}
     }
@@ -272,9 +272,12 @@ a {
     h2{margin-bottom: 0px; color: $blue; text-shadow: 0px 1px 1px rgba($navy, .5); text-align: center;}
     h3{margin-bottom: 5px; color: $lt-blue; }
     p{color: $white;font-size: 16px;}
-    hr { @include center-block(); opacity: .7;
-      &.one {width:15%; margin:5px auto 20px;}
-      &.two {width:60%;}
+    hr { @include center-block(); opacity: .4; position: relative;z-index: 0;
+      &::before{@include before(); height:5px; width:10%; left: 45%; top:-3px; background-color: $white;}
+      &.one {width:15%; margin:5px auto 20px;
+        &::before{width:15%; left: 40%;}
+      }
+      &.two {width:60%; margin-top:20px;}
     }
   }
 }
@@ -292,11 +295,13 @@ a {
   .underlay {position: relative;z-index: 0;}
   .overlay{position: absolute; z-index: 4;}
 
-
   .full-menu{@include sec-default();
     @include sec-bgimage('paper1.jpg'); background-repeat: repeat; position: relative;z-index: 0;
     &::before {@include before(); background-color: rgba($white, .7); }
   }
+
+  .inner.list {margin-top:40px; width: 90%; padding-left: 25px; }
+
   .charter-menu {
     display: inline; float: left;
     width:45%; margin: 40px 0 70px;
@@ -306,21 +311,26 @@ a {
     &:nth-child(2n+2) {float: right;}
 
     .co-icon {@include center-block();width:23%;display: inline-block;float: left;}
-    .icon {height:120px; @include center-block(); margin-top:55%;}
+    .icon {height:100px; @include center-block(); margin-top:55%;}
 
     .text { display: inline-block;float: left; width: 75%; float: right; background-color: $f9; box-shadow: 0px 1px 20px rgba($black, .3);
-      padding:30px 30px 20px; margin-top:10px;
+      padding:20px 20px 20px; margin-top:10px;
     }
-    .title-line {width: 15%; height: 2px; background-color: $navy; margin-bottom: 20px;}
+    .title-line {width: 15%; height: 2px; background-color: $navy; margin-bottom: 15px;}
     h4 {font-size: 1.3rem; @include chels();margin-bottom: 7px;}
     .book-btn{font-style: italic; color: white; padding: 7px 15px; float: right; background-color: $yellow;font-weight: bold;box-shadow: 0px 0px 10px rgba($black, .2);}
-    p span{font-size:15px; color: darken($light, 10%); color:darken($orange, 10%); font-weight: bold;}
-
+    p {font-size:15px;
+      span.dets{color: $white; }
+      span.info{font-weight: 600;}
+    }
 
     &.color1 {
-      .co-icon::before, .book-btn, .title-line {background-color: darken($yellow, 12%);;}
-      h4{color: darken($yellow, 12%);}
-      &::before {@include sec-bgimage('splash-bg1.png');}
+      .co-icon::before, .book-btn, .title-line {
+        background-color: darken($yellow, 12%);
+        background-color: #86e5e1;
+      }
+      h4{color: darken($yellow, 12%); color: #86e5e1}
+      // &::before {@include sec-bgimage('splash-bg1.png');}
     }
 
     &.color2 {
@@ -336,37 +346,49 @@ a {
     }
 
     &.color4 {
-      .co-icon::before, .book-btn, .title-line {background-color: darken($lt-blue, 10%);}
-      h4{color: darken($lt-blue, 10%);}
+      .co-icon::before, .book-btn, .title-line {background-color:$smorange;}
+      h4{color: $smorange;}
+      // h4{color: darken($lt-blue, 10%);}
+      &::before {@include sec-bgimage('splash-bg5.png');}
     }
 
     &.color5 {
-      width: 80%; margin-left: 10%;
-      .co-icon::before, .book-btn, .title-line {background-color: $orange;}
-      h4{color: $orange;}
-      .icon {margin-top: 35%;}
-      &::before {@include sec-bgimage('splash-bg5.png'); width:42%; top: -55px;left:-25px;}
+      width: 75%;
+      .co-icon::before, .book-btn, .title-line {background-color: $blue;}
+      h4{color:$blue}
+      .co-icon {width: 17%;}
+      &::before {
+        width:35%; left:-25px;
+      }
 
+      .text{width:82%;
+        position: relative;z-index: 0;
+        &::after {@include before();
+          background: -webkit-linear-gradient(-122deg, transparent 56%, $blue 25%);
+          background: linear-gradient(115deg, transparent 56%, $blue 25%);
+        }
+      }
 
-      // float: left; margin-left: 0; width: 65%;
-      // .text{float:none; width: 81%}
-      // .co-icon {width:17%;}
-      // .icon {margin-top: 50%;}
-      // &::before {width:42%; top: -55px;left:-40px;}
-    }
-
-    &.celebrate {background-color: $litest; width: 33%;  padding:40px 30px 40px 40px; box-shadow: 0px 1px 20px rgba($black, .3);
-      // display: none;
-      @include sec-bgimage('stock5.jpg'); background-size: cover; height:305px; margin-top:50px;
-      .co-icon {width:30%; @include center-block();}
-      .icon {height: auto; margin-top: 10px;}
-      &::before{@include before(); background-color: rgba($yellow, .8); background-image: none;}
+      .reg, .extra{display: inline-block; width:55%; float:left;}
+      .extra{float: right;width: 35%; padding-top: 4%;}
     }
   }
 
-  .callout {@include sec-default();
-    // padding: 100px 0 80px;
-    padding: 60px 0 80px;
+  .celebrate-block{@include sec-default(); background-color: $smorange;
+    position: relative;z-index: 0;
+    &::before{@include before(); height:95px; top: -30%;
+      background: -webkit-linear-gradient(-122deg, $smorange 50%, rgba($white, .7) 50%);
+      background: linear-gradient(-4deg, $smorange 50%, rgba($white, .7) 50%);
+    }
+
+    .text {width: 50%; float:right;}
+  }
+
+
+  .callout {@include sec-default(); background-color: $f9;
+    position: relative;z-index: 0;
+    &::before {@include before(); height: 70%; top:30%; @include sec-bgimage('cheers.jpg');background-position: center center;}
+    padding: 60px 0;
     .inner{width: 90%;}
     .text-blk {display: inline-block; width: 32%; margin-left: 1%; float: left; background-color: white; padding: 30px;}
     h4 {color: $navy; @include chels(); margin-bottom: 4px;}
@@ -375,23 +397,23 @@ a {
 
     .left, .right {@include sec-grid(left, 42%); }
     .right {float: right; width: 30%; }
-    .text-blk{ margin-left: 0; margin-bottom: 15px;
-      @include sec-default();
+    .text-blk{
+      width: 30%; height:325px;
+      // @include sec-default();
       background-color: transparent; padding:0;
-      &.out{margin-left: -3%;}
-      &.cel {background-color: white; padding:30px 40px; margin-top: 50px; text-align: center; }
-      &.in {margin-left: 4%}
+      background-color: $white; padding: 20px 30px 5px; margin-left:3%;
+      // &.out{margin-left: -3%;}
+      // &.cel {background-color: white; padding:30px 40px; margin-top: 50px; text-align: center; }
+      // &.in {margin-left: 4%}
     }
 
 
-    @include sec-bgimage('stock5.jpg'); background-size: 60%; background-position: right bottom;
-
-    // background-color: $navy;
-    position: relative; z-index: 0;
-    &::after {@include before();height:106%;
-      background: -webkit-linear-gradient(-122deg, $yellow 50%, rgba(black, .45) 25%);
-      background: linear-gradient(115deg, $yellow 50%, rgba(black, .45) 25%);
-    }
+    // background-size: 60%;background-position: right bottom;
+    // position: relative; z-index: 0;
+    // &::after {@include before();height:106%;
+    //   background: -webkit-linear-gradient(-122deg, $lt-blue 50%, transparent 25%);
+    //   background: linear-gradient(115deg, $lt-blue 50%, transparent 25%);
+    // }
   }
 
   @include bp(tb) {
@@ -477,22 +499,24 @@ a {
       p{margin-bottom: 0; color:$navy;}
     }
 
-
-    li {padding-top: 20px; position: relative;z-index: 0;
-      &::after {@include before(); width: 85px; height: 4px; background-color: transparent; top:100%; margin-top: 12px;
-        border-top: 1px solid rgba($black, .1);
-        // border-bottom: 1px solid rgba($blue, .25);
-      }
-    }
     .faq-uk2 {
+      li {padding-top: 20px; position: relative;z-index: 0;
+        &::after {@include before(); width: 85px; height: 4px; background-color: transparent; top:100%; margin-top: 12px;
+          border-top: 1px solid rgba($black, .1);
+        }
+      }
+
       .uk-accordion-title{font-weight: 600; letter-spacing: .5px; font-size: 1.2rem;
         &:hover {color: inherit;}
-        &::after {
+        // &::after {
           // background: -webkit-linear-gradient(-122deg, transparent 50%, $blue 50%);
           // background: linear-gradient(-4deg, transparent 50%, $blue 50%);
-        }
+        // }
 
       }
+
+      li.uk-open .uk-accordion-title{color: $blue}
+
       .uk-accordion-content {width: 85%; padding-bottom: 20px; margin-left:10px;}
     }
 
@@ -558,7 +582,6 @@ a {
         font-size: 18px; @include chels(); text-transform: none;
       }
   }
-
 }
 
 
@@ -682,7 +705,8 @@ a {
     position: relative;z-index: 0;
     &::before {@include before();background-color: rgba($f8, .96);}
 
-    h3{font-weight: bold;margin-bottom:10px;@include chels(); color: $blue}
+    h3{font-weight: bold;margin-bottom:10px;@include chels(); color: $blue;}
+    h4{margin-bottom: 0;@include chels(); }
     .image, .content-hlf {@include sec-grid(left, 50%);}
     .content-hlf{width: 45%; float: right; margin-top:5%;}
     .text{padding: 10px 20px 5px 5px;}
@@ -724,8 +748,8 @@ a {
     // .content-hlf {width: 48%; margin-top:0;}
   }
 
-  .sec4 {background-color: $f9; padding: 80px 0 150px;
-    @include sec-bgimage('stock5.jpg'); background-size: 60%; background-position: right bottom;
+  .sec4 {background-color: $f9; padding: 80px 0;
+    @include sec-bgimage('cheers.jpg'); background-size: 60%; background-position: right center;
     .text-box {width: 30%; @include center-block(); padding:40px;  float:left; margin-left: 5%;
       p{color: $navy; font-size:18px;}
     }
