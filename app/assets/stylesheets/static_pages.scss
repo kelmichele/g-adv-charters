@@ -95,7 +95,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     padding: 140px 40px;
     text-align: center;
 
-    .inner{margin-top:100px;}
+    .inner{margin-top:100px; float: right; width: 65%;}
     h1, h2, .phone-link{ text-shadow: 0px 1px 1px rgba($navy, .9);}
     h2{color:$white; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
     .phone-link {@include chels(); color: $orange; font-size: 44px; margin-bottom: 20px;}
@@ -103,7 +103,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     .book-btn{}
   }
 
-  h1 {font-size:40px; line-height: 1.5em; @include chels(); line-height: 1.2em;
+  h1 {font-size:40px; line-height: 1.5em; @include chels(); line-height: 1.2em; color: $white;
       span{font-size: 30px;color: $yellow;}
       b{color: $blue;}
       width:60%; @include center-block();
@@ -461,26 +461,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     .text{width: 50%;}
   }
 
-  .kgrid{position: relative;z-index: 1;
-    width: 45%; @include center-block();
-    margin-top: -12%;
-    .inside{border-radius: 2px; border:1px solid #dfdfdf; padding: 15px ;background-color: $white;}
-    .top{@include sec-default(); text-align: center;}
-
-    .left, .right{@include sec-grid(left, 48%); text-align: right;}
-    .right{
-      padding-left: 5%;
-      text-align: left;
-      float:right;
-      position:relative; z-index: 0;
-      &::before{@include before(); width: 4px; height: 100%; background-color: $blue;}
-    }
-
-    h1{@include chels(); text-transform: none; color: $orange; }
-    h3 {font-size: 17px;}
-    .top-menu a {@include sec-default(); margin-bottom:5px; color: $blue; font-size:1.2rem; display: none;}
-  }
-
   .full-page{
     // @include sec-bgimage('texture1.png'); background-size: 35%; background-repeat: repeat;
     @include sec-bgimage('dolphin.jpg'); background-repeat: repeat;
@@ -497,54 +477,10 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
   .box-full{@include sec-default(); padding:45px 0;
     // @include sec-bgimage('4.jpg'); background-size: 55%; background-position: top right;
-    // .text{width: 60%; }
-    // .faq-uk2 {
-    //   li {padding-top: 20px; position: relative;z-index: 0;}
-    //   hr.fancy { width: 25%; border-top: 1px solid #c6c6c6;
-    //     &::before{background-color: rgba($light, .6);}
-    //   }
-
-    //   .uk-accordion-title{@include chels(); font-size: 1.2rem;
-    //     // color: $white;
-    //     color: $navy;
-    //     &:hover {color: $navy; opacity: .6;}
-    //     &::after {display:none;}
-    //   }
-    // }
-
-
-    @include sec-bgimage('gac-2bg.jpg');
-    position: relative;z-index: 0;
-    &::before{@include before(); @include gradient($blue, $navy); opacity: .95;}
-    // &::before{@include before();@include sec-bgimage('4.jpg'); background-size: 55%;}
-
-    // ul{display: inline-block; width: 45%; float: left;}
-    // ul.two{float: right;}
-
+    .text{width: 60%; }
     .faq-uk2 {
       li {padding-top: 20px; position: relative;z-index: 0;}
       hr.fancy { width: 25%; border-top: 1px solid #c6c6c6;
-        &::before{background-color: rgba($light, .6);}
-      }
-      .uk-accordion-title{@include chels(); font-size: 1.2rem;
-        color: $white;
-        // color: $navy;
-        &:hover {color: $white; opacity: .6;}
-        &::after {display:none;}
-      }
-    }
-  }
-
-  .box-full2{@include sec-default(); padding:45px 0; background-color: rgba($white, .7); border-bottom: 2px solid $litest;
-    @include sec-bgimage('4-rev.jpg'); background-size: 55%;
-    // position: relative;z-index: 0;
-    // &::before{@include before(); @include sec-bgimage('3-orange.png'); background-size: 55%; }
-
-    .text{width: 55%; float:right; }
-
-    .faq-uk2 {
-      li {padding-top: 20px; position: relative;z-index: 0; }
-      hr.fancy { width: 25%;  border-top: 1px solid #c6c6c6;
         &::before{background-color: rgba($light, .6);}
       }
 
@@ -553,6 +489,74 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
         &:hover {color: $navy; opacity: .6;}
         &::after {display:none;}
       }
+    }
+
+
+    @include sec-bgimage('gac-2bg.jpg');background-position: center right;
+    position: relative;z-index: 0;
+    &::before{@include before();
+      // background-color: rgba($litest, .96);
+      background: -webkit-linear-gradient(-102deg, $litest 46%, transparent 81%);
+       background: linear-gradient(30deg, $litest 46%, transparent 81%);
+
+    }
+
+    &::after{@include before(); height:90px; top:-7px;
+      background: -webkit-linear-gradient(-122deg, transparent 40%, rgba($white, .99) 50%);
+      background: linear-gradient(2deg, transparent 40%, rgba($white, .99) 50%);
+    }
+
+    // ul{display: inline-block; width: 45%; float: left;}
+    // ul.two{float: right;}
+
+    .faq-uk2 {
+      &.one{padding-top:30px;}
+      // li {padding-top: 20px; position: relative;z-index: 0;}
+      // hr.fancy { width: 25%; border-top: 1px solid #c6c6c6;
+      //   &::before{background-color: rgba($light, .6);}
+      // }
+      // .uk-accordion-title{@include chels(); font-size: 1.2rem;
+      //   color: $white;
+      //   &:hover {color: $white; opacity: .6;}
+      //   &::after {display:none;}
+      // }
+      // p{color:$litest;}
+    }
+  }
+
+  .box-full2{@include sec-default(); padding:45px 0;
+    // background-color: rgba($white, .7); border-bottom: 2px solid $litest;
+
+    @include sec-bgimage('gac-4.jpg'); background-size: 88%;
+    position: relative;z-index: 0;
+    // &::before{@include before();background-color: rgba($navy, .96);}
+
+    &::before{@include before();
+      background: -webkit-linear-gradient(-102deg, $navy 46%, transparent 81%);
+      background: linear-gradient(-35deg, $navy 46%, transparent 81%);
+
+    }
+
+    &::after{@include before(); height:30px; top:-7px;
+      background: -webkit-linear-gradient(-122deg, transparent 40%, rgba($litest, .99) 50%);
+      background: linear-gradient(1deg, transparent 40%, rgba($litest, .99) 50%);
+    }
+
+    .text{width: 55%; float:right; text-align: right;}
+    hr {float: right;}
+
+    .faq-uk2 {
+      li {padding-top: 20px; position: relative;z-index: 0; }
+      hr.fancy { width: 25%;  border-top: 1px solid #c6c6c6;
+        &::before{background-color: rgba($light, .6);}
+      }
+
+      .uk-accordion-title{@include chels(); font-size: 1.2rem;
+        color: $white;
+        &:hover {color: $white; opacity: .6;}
+        &::after {display:none;}
+      }
+      p{color: $litest;}
     }
   }
 
