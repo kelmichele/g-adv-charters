@@ -2,20 +2,24 @@
 <% @page_description = "Welcome" %>
 
 <div class="full-page">
-	<div class="top-diag">
+	<!-- <div class="top-diag">
 		<div class="inner">
 			<div class="text">
 				<h1>Toy Time</h1>
 				<h2>The Charter Boat</h2>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
-	<div class="full-toy">
+	<!-- <div class="full-toy">
 		<div class="inner">
 			<div class="toy-grid">
-				<div class="tg-img"><%= image_tag('gac-5.jpg', class: 'img-responsive', alt: 'Gulf Adventure Charters, Toy Time Image') %></div>
+				<div class="img-row">
+					<div class="tg-img1"><%= image_tag('gac-5.jpg', class: 'img-responsive', alt: 'Gulf Adventure Charters, Toy Time Image') %></div>
+					<div class="tg-img2"><%= image_tag('gac-6.jpg', class: 'img-responsive', alt: 'Gulf Adventure Charters, Toy Time Image') %></div>
+				</div>
 
+				<div class="tg-img"><%= image_tag('gac-5.jpg', class: 'img-responsive', alt: 'Gulf Adventure Charters, Toy Time Image') %></div>
 				<div class="tg-box one">
 					<h4>25ft Cuddy Cabin Grady White</h4>
 					<p>Bow seating<br>
@@ -35,25 +39,65 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
-	<!-- <div class="full-img"><%= image_tag('gac-3.jpg', class: 'img-responsive', alt: 'Gulf Adventure Charters, Toy Time Image') %></div> -->
-
-
-	<div class="single-sec">
-		<div class="tg-link one">
-
-			<%= link_to "", class: "links" do %>
-				View Our Charter Options
-			<% end %>
-		</div>
-
-		<div class="tg-link two">
-
-			<%= link_to "", class: "links" do %>
-				Contact and Location Information
-			<% end %>
+	<div class="sec-diag">
+		<div class="inner">
+			<div class="text-box">
+				<h1>Toy Time</h1>
+				<h2>The Charter Boat</h2>
+			</div>
 		</div>
 	</div>
+
+	<div class="full-toy">
+			<div class="inner">
+				<div class="toy-grid">
+					<div class="content-grid">
+						<div class="left">
+							<div class="tg-img2"><%= image_tag('gac-5.jpg', class: 'img-responsive', alt: 'Gulf Adventure Charters, Toy Time Image') %></div>
+
+							<div class="list-row">
+								<%= image_tag('icon-wheel.png', class: 'icon', alt: 'Gulf Adventure Charters, Toy Time Image') %>
+
+								<div class="tg-li uno">
+									<h4>25ft Cuddy Cabin Grady White</h4>
+									<p>Bow seating<br> Large back deck with seating</p>
+								</div>
+
+								<div class="tg-li">
+									<h4>Awesome sound system</h4>
+									<p> Play your own music!</p>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="right">
+							<div class="list-row">
+								<div class="tg-li">
+									<h4>Bimini top option</h4>
+									<p> For shade on the back deck.</p>
+								</div>
+
+								<div class="tg-li">
+									<h4>Cabin</h4>
+									<p> To keep things dry and out of the sun.</p>
+								</div>
+
+								<div class="tg-li">
+									<h4>Bathroom</h4>
+									<p>Portable potty for emergencies.</p>
+								</div>
+							</div>
+
+							<div class="tg-img1"><%= image_tag('gac-6.jpg', class: 'img-responsive', alt: 'Gulf Adventure Charters, Toy Time Image') %></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
 
 </div>
