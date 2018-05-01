@@ -40,22 +40,6 @@ body{@include sec-default();
   }
 }
 
-// body.faq {
-//   &::before {
-//     background: -webkit-linear-gradient(-122deg, transparent 30%, $yellow 30%);
-//     background: linear-gradient(-6deg, transparent 30%, $yellow 30%);
-//   }
-//   .bg-wrap::before{ @include gradient($orange, $yellow);}
-// }
-body.toy-time {
-  &::before {
-    background: -webkit-linear-gradient(-122deg, transparent 30%, $orange 30%);
-    background: linear-gradient(-6deg, transparent 30%, $orange 30%);
-  }
-  .bg-wrap::before{ @include gradient($orange, $yellow);}
-}
-
-
 
 .full-page{
 	background-color: $white; padding-top:0;

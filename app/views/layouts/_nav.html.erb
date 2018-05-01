@@ -1,4 +1,4 @@
-<li class="navli nav1"><%= link_to "Location", "/location", class: 'navlink' %></li>
+<!-- <li class="navli nav1"><%= link_to "Location", "/location", class: 'navlink' %></li>
 <li class="navli nav2"><%= link_to "Charters", "/charters", class: 'navlink' %></li>
 <li class="logo-nav">
   <%= link_to "/", class: "logo-link" do %>
@@ -7,4 +7,34 @@
 </li>
 <li class="navli nav3"><%= link_to "Toy Time", "/toy-time", class: 'navlink' %></li>
 <li class="navli nav4"><%= link_to "FAQ's", "/faq", class: 'navlink' %></li>
-<!-- <li class="navli nav4"><%= link_to "Book Now!", "/book", class: 'navlink' %></li> -->
+ -->
+
+<ul class="sitenav uno">
+	<li class="navli ft-only"><%= link_to "Home", "/home", class: 'navlink' %></li>
+ 	<li class="navli list1"><%= link_to "Location", "/location", class: 'navlink' %></li>
+	<li class="navli list1"><%= link_to "Charters", "/charters", class: 'navlink' %></li>
+	<li class="navli list1"><%= link_to "Toy Time", "/toy-time", class: 'navlink' %></li>
+	<li class="navli list1"><%= link_to "FAQ's", "/faq", class: 'navlink' %></li>
+</ul>
+
+<div class="logo-nav">
+  <%= link_to "/", class: "logo-link" do %>
+    <%= image_tag("gac-logo.png", class: "img-responsive logo-img") %>
+  <% end %>
+</div>
+
+<ul class="sitenav dos">
+	<li class="navli list2"><%= link_to "Book Now", "/book", class: 'navlink' %></li>
+	<li class="navli list2"><span class="navlink phone"><%= number_to_phone(2514243430, delimiter: '.') %></span></li>
+	<li class="navli list2 icons">
+		<a href="mailto: info@boatgulfadventurecharters.com" class="navlink fnl"><i class="uk-icon" uk-icon="mail"></i></a>
+
+		<%= link_to"/fb", :target => "_blank", class: 'navlink' do %>
+	    <i class="uk-icon" uk-icon="facebook"></i>
+	  <% end %>
+
+		<%= link_to "/insta", :target => "_blank", class: 'navlink' do %>
+		  <i class="uk-icon" uk-icon="instagram"></i>
+		<% end %>
+	</li>
+</ul>
