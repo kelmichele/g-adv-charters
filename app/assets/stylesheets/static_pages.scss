@@ -264,7 +264,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   .contact-info {
-    @include sec-default(); padding:$fw-pad;
+    @include sec-default(); padding:90px 0;
     .image-hlf, .text-hlf {@include sec-grid(left, 40%); position: relative;z-index: 1;}
     .image-hlf {width:44%; }
 
@@ -477,7 +477,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   .full-page{
-    // @include sec-bgimage('texture1.png'); background-size: 35%; background-repeat: repeat;
     @include sec-bgimage('dolphin.jpg'); background-repeat: repeat;
     position: relative; z-index: 0;
     &::before {@include before(); background-color: rgba($white, .96);}
@@ -496,8 +495,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   .box-full{@include sec-default(); padding:60px 0 40px;
-    // @include sec-bgimage('4.jpg'); background-size: 55%; background-position: top right;
-    // .text{width: 60%; }
     .faq-uk2 {
       li {position: relative;z-index: 0;border: 2px solid white;}
       hr.fancy { width: 75%; border-top: 1px solid rgba($navy, .8);
@@ -525,43 +522,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     ul{display: inline-block; width: 45%; float: left; padding-top: 40px;}
     ul.two{float: right; padding-top: 25px};
   }
-
-  .box-full2{@include sec-default(); padding:45px 0;
-    // background-color: rgba($white, .7); border-bottom: 2px solid $litest;
-
-    @include sec-bgimage('gac-4.jpg'); background-size: 88%;
-    position: relative;z-index: 0;
-    // &::before{@include before();background-color: rgba($navy, .96);}
-
-    &::before{@include before();
-      background: -webkit-linear-gradient(-102deg, $navy 46%, transparent 81%);
-      background: linear-gradient(-35deg, $navy 46%, transparent 81%);
-
-    }
-
-    &::after{@include before(); height:30px; top:-7px;
-      background: -webkit-linear-gradient(-122deg, transparent 40%, rgba($litest, .99) 50%);
-      background: linear-gradient(1deg, transparent 40%, rgba($litest, .99) 50%);
-    }
-
-    .text{width: 55%; float:right; text-align: right;}
-    hr {float: right;}
-
-    .faq-uk2 {
-      li {padding-top: 20px; position: relative;z-index: 0; }
-      hr.fancy { width: 25%;  border-top: 1px solid #c6c6c6;
-        &::before{background-color: rgba($light, .6);}
-      }
-
-      .uk-accordion-title{@include chels(); font-size: 1.2rem;
-        color: $white;
-        &:hover {color: $white; opacity: .6;}
-        &::after {display:none;}
-      }
-      p{color: $litest;}
-    }
-  }
-
 
   .faqs-full{@include sec-default(); padding:40px 0;
     .inner {width: 90%;}
@@ -621,6 +581,43 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       &::before{top: 74%;}
     }
   }
+
+  .box-full2{@include sec-default();
+
+
+    .inner{width: 75%;
+      position: relative;z-index: 0;
+    // &::before{@include before();background-color: rgba($litest, .9);}
+    @include sec-bgimage('header-img.jpg');background-size: 65%; background-position: bottom right;
+
+      &::before {@include before();
+        background: -webkit-linear-gradient(-122deg, $litest 55%, transparent 25%);
+        background: linear-gradient(110deg, $litest 55%, transparent 25%);
+      }
+    }
+
+    .faq-uk2 {width: 50%; padding:40px 0;
+      li {padding: 10px;}
+
+      .uk-accordion-title{@include chels(); font-size: 1.2rem; text-transform: none;
+        color: $navy;
+        &:hover {color: $navy; opacity: .6;}
+        // &::after {vertical-align: top;}
+      }
+      p{color: $navy;}
+    }
+
+    &.rev {
+      @include sec-bgimage('gac-10.jpg'); background-size: 60%; background-position: center left;
+      &::before{
+        background: -webkit-linear-gradient(-122deg, transparent 45%, $yellow 25%);
+        background: linear-gradient(110deg, transparent 45%, $yellow 25%);
+      }
+
+      .faq-uk2 {float: right;}
+    }
+
+  }
 }
 
 .toy-time {
@@ -631,27 +628,20 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   .top-diag {background-color: $navy;
-    // height:545px;@include sec-bgimage('gac-5.jpg');padding-top:35px;
-    // .inner{width: 92%;}
-    // .text{margin-left: 0;}
     &::before{
-      // top:0;
-      // height:250px;
       background: -webkit-linear-gradient(-122deg, $f8 50%, $navy 50%);
       background: linear-gradient(-4deg, $f8 50%, $navy 50%);
     }
-    h1,h2{color: $white;}
+    h1,h2{color: $yellow;}
   }
 
   h2{margin-bottom:0;@include chels(); }
   h1{@include chels(); letter-spacing: 2px; line-height: 1em;}
 
-
-  .full-toy{ @include sec-default(); padding:60px 0; margin: 40px 0 0;
+  .full-toy{ @include sec-default(); padding:60px 0 0; margin: 40px 0 0;
     .inner{width: 85%;}
     .toy-grid { text-align: center;}
   }
-
 
   .sec-diag {background-color: $f9; padding: 90px 0 0; height:300px;
     @include sec-bgimage('gac-2bg.jpg'); background-size: 75%; background-position: right center;
@@ -670,16 +660,42 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   .content-grid {@include sec-default();
     .icon {height: 40px; @include center-block(); margin: 15px auto 10px}
 
-    .left, .right {@include sec-default();}
-    .list-row, .tg-img1, .tg-img2{display: inline-block; float: left;width: 49%;}
+    .full{@include sec-default();}
+    .list-row, .tg-img1, .tg-img2, .txt-row{display: inline-block; float: left;width: 49%;}
     .list-row{margin-top: 30px;}
+
+
     .tg-li {@include sec-default();margin:15px 0;
       &:first-child{margin-top: 30px;}
 
-      h4{font-size: 18px; @include chels(); text-transform: none; font-weight: normal; color:$navy; margin-bottom: 0px; line-height: 1.2em;}
-      p {line-height: 1.7em; color: $blue; margin: 6px 0 10px;}
 
+      h4{font-size: 18px; @include chels(); text-transform: none; font-weight: normal; color:$navy; margin-bottom: 0px; line-height: 1.2em;}
+
+      p {line-height: 1.7em; color: $blue; margin: 6px 0 10px; font-size: 17px; font-weight: 600;}
     }
+
+    .tg-img2{width: 55%; float:right;}
+    .txt-row{margin-top: 10%; width: 35%;
+      h3 {@include chels(); color: $blue; font-size: 22px; text-shadow: 0px 1px 1px rgba($black, .3);}
+    }
+    .r1, .r2{display: inline; float: left; width: 48%; }
+    .tgi{margin-bottom: 15px;}
+    .r2{margin-left: 2%; margin-top: 30px;}
+
+    .full.btm { position: relative;z-index: 0; padding: $fw-pad; margin-top: 60px;
+      &::after {@include before(); background-color: rgba($blue, .9); width: 117.7%; left:-8.9%;}
+      &::before {@include before(); @include sec-bgimage('ocean-waves.jpg'); width: 117.7%; left:-8.9%; z-index: -2;}
+
+      .tg-li2 {
+        &.uno {margin-top: 10%;}
+        display: inline-block; float: left; width: 30%; margin-left: 3%;
+        background-color: $white; margin-top: 25px;
+        padding:20px;
+        h4{font-size: 18px; @include chels(); text-transform: none; font-weight: normal; color:$navy; margin-bottom: 0px; line-height: 1.2em;}
+        p {line-height: 1.7em; color: $blue; margin: 6px 0 10px; font-size: 17px; font-weight: 600;}
+      }
+    }
+
   }
 }
 
