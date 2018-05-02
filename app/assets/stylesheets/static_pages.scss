@@ -64,6 +64,8 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   &.center{@include center-block();}
 }
 
+.icon {height:100px; @include center-block();}
+
 /*****************************************/
 /*****************************************/
 /*****************************************/
@@ -101,9 +103,10 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     .phone-link {@include chels(); color: $orange; font-size: 44px; margin-bottom: 20px;}
 
     .book-btn{}
+    h1{color: $white;}
   }
 
-  h1 {font-size:40px; line-height: 1.5em; @include chels(); line-height: 1.2em; color: $white;
+  h1 {font-size:40px; line-height: 1.5em; @include chels(); line-height: 1.2em;
       span{font-size: 30px;color: $yellow;}
       b{color: $blue;}
       width:60%; @include center-block();
@@ -208,21 +211,29 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     &.left{margin: 0 0 20px;}
   }
 
-  .inner {width:90%;}
-
   h2{@include chels();color: $navy;text-shadow: 0px 1px 0px rgba($black, .3)}
   h3 {font-weight: bold;@include chels();}
   p{margin-bottom: 10px; font-size: 17px;}
 
-  .top-diag {padding-top: 45px;background-color: $navy;
-    .inner{width: 95%;}
+  .top-diag {padding-top: 45px;background-color: $navy; z-index: 1;
+    .inner{width: 100%;}
     &::before{
-      background: -webkit-linear-gradient(-122deg, $f9 50%, $navy 50%);
-      background: linear-gradient(-4deg, $f9 50%, $navy 50%);
+      background: -webkit-linear-gradient(-122deg, transparent 50%, $navy 50%);
+      background: linear-gradient(-3deg, transparent 50%, $navy 50%);
     }
     h1,h2{color: $white; margin-bottom:0; }
     h2 {font-weight: normal; color: $yellow}
     h1 {letter-spacing: 2px; margin-top: 0px;}
+
+    &.btm {
+      .text{width: 80%;}
+      p{color: $white;}
+
+      // &::before{
+      //   background: -webkit-linear-gradient(-122deg, $smorange 50%, $navy 50%);
+      //   background: linear-gradient(-3deg, $smorange 50%, $navy 50%);
+      // }
+    }
   }
 
   .full-page {
@@ -232,45 +243,41 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   .intro {
-    padding:80px 0 50px;
-    position: relative;z-index: 1;
-    p{color: darken($light, 15%);}
+    @include sec-default();padding:80px 0 00px;
+    position: relative;z-index: 0;
 
-    @include sec-default();
-    .image-hlf, .text-hlf {@include sec-grid(left, 40%); position: relative;z-index: 1;}
-    .image-hlf {margin-left:5%; width:44%;}
-    .text-hlf { z-index: 2; padding: 40px; margin-top: 5%; width: 45%;
-      &::before {@include before(); width: 110%; border: 3px solid $white; left: -5%;}
-    }
-
-
-    @include sec-bgimage('gac-2.jpg');
-    .text-hlf{width:33%;background-color: rgba($f9, .8);margin-top:7%; padding:20px 30px;
+    p{color:$navy;margin-bottom: 0px; font-size: 16px;}
+    @include sec-bgimage('gac-2bg.jpg');
+    background-position: center right;
+    .text-hlf{
+      width:40%;
+      margin-left:-5%;
+      // width:42%;
+      // display:inline-block; float: left;
+      background-color: rgba($f9, .9);
+      margin-top:7%; padding:10px 20px;
+      // border-top-right-radius: 44%;
       &::before {display: none;}
     }
-    p{color: $navy; margin-bottom: 15px; }
-    h3 {color: $smorange;}
-
+    h3 {color: $smorange; margin-bottom:0px;}
+    h3 span {color: $blue;}
   }
 
   .contact-info {
-    @include sec-default(); padding:120px 0 85px;
+    @include sec-default(); padding:$fw-pad;
     .image-hlf, .text-hlf {@include sec-grid(left, 40%); position: relative;z-index: 1;}
     .image-hlf {width:44%; }
-    .text-hlf {z-index: 2; padding: 40px; margin-top: 2.5%;margin-left:8%;
-      &::before {@include before(); width:110%; border: 3px solid $blue; right: -5%;}
-    }
 
     h4 {margin-bottom: 5px; font-weight: bold; color: $blue; }
     .title-line {background-color: $blue; height:2px;}
-    p {line-height: 1.55em; font-size:17px; letter-spacing: .5px; margin-bottom:15px;
+    p {line-height: 1.55em; font-size:16px; letter-spacing: .5px; margin-bottom:15px;
       span{font-size:16px; color: $blue; font-weight: bold; font-family: $chels;}
     }
     .social{@include sec-default(); margin-bottom: 15px;}
 
 
     .image-hlf{float: left; margin-left:8%; width: 45%;}
-    .text-hlf {margin-left: 0; padding:0 0 0 40px; margin-top: 1%;
+    .text-hlf {margin-left: 0; padding:0 0 0 40px; margin-top: 1%; z-index: 2;
       .text{width: 90%;}
       &::before{display: none;}
     }
@@ -280,42 +287,49 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       &::before{background-color: $blue;}
     }
 
-    .grad-link {@include gradient($yellow, darken($yellow, 3%)); color:$navy;
-      margin-left: 15%; margin-top: 10px;
+    .grad-link {
+      // @include gradient(lighten($yellow, 3%), $yellow);
+      @include gradient($lt-blue, $blue);
+      color:$white; text-shadow: 0px 1px 1px rgba($black, .6);
+      // margin-left: 15%;
+      margin-top: 10px;
+      box-shadow: 0px 1px 5px rgba($black, .25);
     }
   }
 
-
-  .payment-info{@include sec-default();
+  .payment-info{
+    @include sec-default();
     background-color: $navy;
 
-    .inner {width:60%; text-align: center; @include center-block(); background-color: $navy;padding: 25px 0;}
     .pay1, .pay2{width:95%; @include center-block(); margin-top:20px;}
     h2{margin-bottom: 0px; color: $blue; text-shadow: 0px 1px 1px rgba($navy, .5); text-align: center;}
     h3{margin-bottom: 5px; color: $lt-blue; }
     p{color: $white;font-size: 16px;}
-    hr { @include center-block(); opacity: .4; position: relative;z-index: 0;
-      &::before{@include before(); height:5px; width:10%; left: 45%; top:-3px; background-color: $white;}
-      &.one {width:15%; margin:5px auto 20px;
-        &::before{width:15%; left: 40%;}
+  }
+
+  .payment-info{
+    @include sec-bgimage('tt6.jpg'); background-position: center center;
+    .inner{@include sec-default();padding: 10px 2.5%; text-align: center;
+      background-color: rgba($yellow, .97);
+
+      position: relative;z-index: 0;
+      &::after {@include before();
+        background: -webkit-linear-gradient(-122deg, transparent 65%, rgba($lt-blue, .8) 25%);
+        background: linear-gradient(110deg, transparent 65%, rgba($lt-blue, .8) 25%);
       }
-      &.two {width:60%; margin-top:20px;}
+    }
+    .pay1, .pay2, .final {display: inline-block; width: 30%; float: left; margin-left: 2%; padding: 0 10px 10px}
+    h3 {color: $blue;}
+    p {font-size:15px; color:$navy}
+    hr.fancy{border-top: 1px solid rgba($navy, .6);
+      &::before{background-color: $navy;}
+    }
+    .final {float: right; padding: 20px;
+      p{color: $navy; @include chels(); font-weight: normal;}
+      .icon {height: 50px;}
     }
   }
 
-  .intro .payment-info{width: 62%; float: right; background-color: transparent; padding:0;@include sec-bgimage('tt6.jpg'); background-position: center center;
-    margin-top: 22%;
-    .inner{@include sec-default();padding: 10px 2.5%;
-      background-color: rgba($yellow, .97);
-    }
-    .pay1, .pay2{display: inline-block; width: 47%; float: left; margin-left: 2%; padding: 0 10px 5px}
-    h3 {color: $blue;}
-    p {font-size:15px; color:$navy}
-    hr.fancy{border-top: 1px solid #c1c1c1;
-      &::before{background-color: $navy;}
-    }
-    // .pay2 {float:right;}
-  }
 }
 
 .charters {
@@ -454,6 +468,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   .top-diag {
     background-color: $yellow; padding:40px 0 0;
     h1 {color: $navy; margin-bottom: 0;}
+    .inner {width: 100%;}
     &::before{height:120px;
       background: -webkit-linear-gradient(-122deg, transparent 50%, $yellow 50%);
       background: linear-gradient(-4deg, transparent 50%, $yellow 50%);
@@ -468,60 +483,47 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     &::before {@include before(); background-color: rgba($white, .96);}
   }
 
-  .intro {@include sec-default(); text-align: center; margin-top:40px; padding:80px 0 60px;
-    padding: 110px 0 90px;
-    .inner{width: 45%;}
-    h3{ margin-bottom: 20px;}
+  .intro {@include sec-default(); margin-top:40px;
+    padding: 90px 0 50px;
+    text-align: center;
+    .inner{width: 75%;}
+    h3{ margin-bottom: 40px; }
     .grad-link {@include gradient(lighten($orange, 10%), $yellow);color: $navy; box-shadow: 0px 0px 10px rgba($black, .2);}
+
+    .text, .image-hlf{display: inline-block; float: right;width: 40%;}
+    .image-hlf {float: left; width: 55%;}
+    .text {margin-top: 8%; padding-right: 20px;}
   }
 
-  .box-full{@include sec-default(); padding:45px 0;
+  .box-full{@include sec-default(); padding:60px 0 40px;
     // @include sec-bgimage('4.jpg'); background-size: 55%; background-position: top right;
-    .text{width: 60%; }
+    // .text{width: 60%; }
     .faq-uk2 {
-      li {padding-top: 20px; position: relative;z-index: 0;}
-      hr.fancy { width: 25%; border-top: 1px solid #c6c6c6;
-        &::before{background-color: rgba($light, .6);}
+      li {position: relative;z-index: 0;border: 2px solid white;}
+      hr.fancy { width: 75%; border-top: 1px solid rgba($navy, .8);
+        display: none;
+        &::before{background-color: rgba($navy, .8);}
       }
 
-      .uk-accordion-title{@include chels(); font-size: 1.2rem;
-        color: $navy;
-        &:hover {color: $navy; opacity: .6;}
-        &::after {display:none;}
+      .uk-accordion-title{@include chels(); font-size: 1.2rem;padding: 20px;
+        color: $white; text-shadow: 0px 1px 1px rgba($black, .6);
+        &:hover {color: $white; opacity: .6;}
       }
+      .uk-accordion-content{background-color: rgba($white, .95); padding:10px 20px;margin-top:0;}
+      p{color: $litest; width: 90%; color: $navy}
     }
-
 
     @include sec-bgimage('gac-2bg.jpg');background-position: center right;
     position: relative;z-index: 0;
-    &::before{@include before();
-      // background-color: rgba($litest, .96);
-      background: -webkit-linear-gradient(-102deg, $litest 46%, transparent 81%);
-       background: linear-gradient(30deg, $litest 46%, transparent 81%);
-
-    }
+    &::before{@include before();background-color: rgba($navy, .9);}
 
     &::after{@include before(); height:90px; top:-7px;
-      background: -webkit-linear-gradient(-122deg, transparent 40%, rgba($white, .99) 50%);
-      background: linear-gradient(2deg, transparent 40%, rgba($white, .99) 50%);
+      background: -webkit-linear-gradient(-122deg, transparent 50%, rgba($white, .99) 50%);
+      background: linear-gradient(2deg, transparent 50%, rgba($white, .99) 50%);
     }
 
-    // ul{display: inline-block; width: 45%; float: left;}
-    // ul.two{float: right;}
-
-    .faq-uk2 {
-      &.one{padding-top:30px;}
-      // li {padding-top: 20px; position: relative;z-index: 0;}
-      // hr.fancy { width: 25%; border-top: 1px solid #c6c6c6;
-      //   &::before{background-color: rgba($light, .6);}
-      // }
-      // .uk-accordion-title{@include chels(); font-size: 1.2rem;
-      //   color: $white;
-      //   &:hover {color: $white; opacity: .6;}
-      //   &::after {display:none;}
-      // }
-      // p{color:$litest;}
-    }
+    ul{display: inline-block; width: 45%; float: left; padding-top: 40px;}
+    ul.two{float: right; padding-top: 25px};
   }
 
   .box-full2{@include sec-default(); padding:45px 0;
@@ -675,7 +677,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       &:first-child{margin-top: 30px;}
 
       h4{font-size: 18px; @include chels(); text-transform: none; font-weight: normal; color:$navy; margin-bottom: 0px; line-height: 1.2em;}
-      p {line-height: 1.6em; color: $blue; margin: 6px 0 10px;}
+      p {line-height: 1.7em; color: $blue; margin: 6px 0 10px;}
 
     }
   }

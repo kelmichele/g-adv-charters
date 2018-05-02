@@ -2,41 +2,28 @@
 <% @page_description = "Welcome" %>
 
 
-<!-- <div class="hd-grad">
-	<div class="inner">
-		<div class="box box-text">
-			<h1>Contact Us</h1>
-		</div>
-	</div>
-</div> -->
-
 <div class="full-page">
 	<div class="top-diag">
 		<div class="inner">
 			<div class="text">
-				<!-- <h2><span>Gulf</span> Adventure Charters</h2> -->
 				<h1>Contact Us</h1>
 			</div>
 		</div>
 	</div>
 	<div class="clearfix"></div>
 
-	<!-- <div class="intro">
+	<div class="intro">
 		<div class="inner">
-			<div class="image-hlf">
-				<%=image_tag('gac-3.jpg', class: 'img-responsive', alt: '') %>
-			</div>
-
 			<div class="text-hlf">
-				<h2>Gulf Adventure Charters</h2>
+				<h3><span>Open 7 days a week!</span></h3>
 				<p>We are located at the Flora-Bama Marina, on the AL/FL line, across from the world-famous Flora-Bama Bar.
 					Whether you are staying in Gulf Shores, Orange Beach, or Perdido Key, we are only minutes away!
-					Please contact us if you have any questions about our boat charters. We are happy to help!
-					<br><span>We hope to see you soon!</span>
+					<!-- Please contact us if you have any questions about our boat charters. We are happy to help! -->
 				</p>
+				<h3>We hope to see you soon!</h3>
 			</div>
 		</div>
-	</div> -->
+	</div>
 
 	<div class="contact-info">
 		<div class="inside">
@@ -47,20 +34,16 @@
 			<div class="text-hlf">
 		    <div class="text">
 		    	<div class="blk">
-						<!-- <h3><span>Open 7 days a week!</span></h3> -->
-
-				<h2><span>Gulf</span> Adventure Charters</h2>
+						<h2><span>Gulf</span> Adventure Charters</h2>
+							<hr class="fancy">
 				    	<p class="address"><span>Flora-Bama Marina:</span><br>
 							29603 Perdido Beach Blvd<br>
 							Orange Beach, AL 36561<br>
-							<b>Slip: 123</b></p>
-							<hr class="fancy">
+							Slip: 9</p>
 
 							<p><span>Phone: </span><br> 251.424.3430</p>
-							<hr class="fancy">
 
 							<p><span>Email: </span><br> info@boatgulfadventurecharters.com</p>
-							<hr class="fancy">
 
 							<div class="social">
 								<%= link_to"/fb", :target => "_blank" do %>
@@ -70,66 +53,33 @@
 								<%= link_to "/insta", :target => "_blank" do %>
 									<i class="uk-icon" uk-icon="instagram"></i>
 								<% end %>
-								<%= link_to "Book Now", "", class: 'grad-link', target: '_blank' %>
 							</div>
+							<%= link_to "Book Now", "", class: 'grad-link', target: '_blank' %>
 			    </div>
 			  </div>
 			</div>
 		</div>
 	</div>
 
-	<div class="intro">
+	<div id="payments" class="payment-info">
 		<div class="inner">
-			<div class="text-hlf">
-				<h3><span>Open 7 days a week!</span></h3>
-				<p>We are located at the Flora-Bama Marina, on the AL/FL line, across from the world-famous Flora-Bama Bar.
-					Whether you are staying in Gulf Shores, Orange Beach, or Perdido Key, we are only minutes away!
-					Please contact us if you have any questions about our boat charters. We are happy to help!
-				</p>
-				<h3><span>We hope to see you soon!</span></h3>
-			</div>
-		</div>
-
-			<div id="payments" class="payment-info">
-				<div class="inner">
-			  	<!-- <h2>Payment Info</h2>
-					<hr class="one"> -->
-
-			  	<div class="pay1">
-						<h3>Forms of Payment:</h3>
-						<hr class="fancy">
-						<p> Cash or Credit Card. A $100 deposit is required at the time of booking.</p>
-					</div>
-
-
-					<div class="pay2">
-						<h3>Cancellation Policy:</h3>
-						<hr class="fancy">
-						<p> All reservations canceled within 48 hours of their scheduled charter will be charged in full.</p>
-					</div>
-			  </div>
-			</div>
-
-	</div>
-
-
-	<!-- <div id="payments" class="payment-info">
-		<div class="inner">
-	  	<h2>Payment Info</h2>
-			<hr class="one">
 
 	  	<div class="pay1">
 				<h3>Forms of Payment:</h3>
-				<p> Cash or Credit Card. <br>A $100 deposit is required at the time of booking.</p>
+				<hr class="fancy center">
+				<p> Cash or Credit Card. A $100 deposit is required at the time of booking.</p>
 			</div>
-
-			<hr class="two">
 
 			<div class="pay2">
 				<h3>Cancellation Policy:</h3>
+				<hr class="fancy center">
 				<p> All reservations canceled within 48 hours of their scheduled charter will be charged in full.</p>
 			</div>
-	  </div>
-	</div> -->
 
+			<div class="final">
+				<%=image_tag('icon-anchor.png', class: 'icon', alt: '') %>
+				<p>Please contact us if you have any questions about our boat charters. We are happy to help!</p>
+			</div>
+	  </div>
+	</div>
 </div>
