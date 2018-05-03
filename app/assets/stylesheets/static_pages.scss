@@ -128,22 +128,24 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       padding: 0;
 
       .image {width: 33%; display:inline-block; float: right; margin-top:-5%; }
-      .text-box {width: 38%; float: left;display: inline-block;padding:100px 0; margin-left: 5%;
+      .text-box {width: 40%; float: left;display: inline-block;padding:100px 0; margin-left: 5%;
         // padding:30px 3%; background-color: $white;
         h4{@include chels(); font-size:18px;}
         .grad-link {@include gradient(rgba($navy, .85), $navy);}
 
         h4, p {color: $white;}
-        p{margin-bottom: 30px;}
+        h4{font-size: 22px;}
+        p{margin-bottom: 30px; font-size: 18px; padding-right:20px;}
       }
     }
 
-  .sec3 {background-color: $f9; padding:110px 0 130px;
+  .sec3 {background-color: $f9; padding:90px 0 ;
     @include sec-bgimage('tt6.jpg'); background-position: center center;
     position: relative;z-index: 0;
     &::before {@include before();background-color: rgba($f8, .96);}
 
-    h3{font-weight: bold;margin-bottom:10px;@include chels(); color: $blue}
+    h3{font-weight: bold;margin-bottom:10px;@include chels(); color: $blue; font-size: 22px;}
+    h4{margin-bottom: 0; @include chels();}
     .image, .content-hlf {@include sec-grid(left, 50%);}
     .content-hlf{width: 45%; float: right; margin-top:5%;}
     .text{padding: 10px 20px 5px 5px;}
@@ -186,16 +188,16 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   .sec4 {background-color: $f9; padding: 80px 0 150px;
-    @include sec-bgimage('cheers.jpg'); background-size: 60%; background-position: right bottom;
-    .text-box {width: 30%; @include center-block(); padding:20px; float:left; margin-left: 5%;
+    @include sec-bgimage('cheers.jpg'); background-size: 64%; background-position: right bottom;
+    .text-box {width: 30%; @include center-block(); padding:20px; float:left; margin-left: 7%;
       p{color: $navy; font-size:18px;}
     }
 
     position: relative; z-index: 0;
     &::after {@include before();
       // margin-top:-2%;height:106%;
-      background: -webkit-linear-gradient(-122deg, $yellow 50%, transparent 25%);
-      background: linear-gradient(115deg, $yellow 50%, transparent 25%);
+      background: -webkit-linear-gradient(-122deg, $yellow 45%, transparent 25%);
+      background: linear-gradient(115deg, $yellow 45%, transparent 25%);
       // background: -webkit-linear-gradient(-102deg, darken($blue, 15%) 19%, transparent 81%);
       // background: linear-gradient(12deg, darken($blue, 15%) 19%, transparent 81%);
     }
@@ -228,11 +230,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     &.btm {
       .text{width: 80%;}
       p{color: $white;}
-
-      // &::before{
-      //   background: -webkit-linear-gradient(-122deg, $smorange 50%, $navy 50%);
-      //   background: linear-gradient(-3deg, $smorange 50%, $navy 50%);
-      // }
     }
   }
 
@@ -260,7 +257,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       &::before {display: none;}
     }
     h3 {color: $smorange; margin-bottom:0px;}
-    h3 span {color: $blue;}
+    // h3 span {color: $blue;}
   }
 
   .contact-info {
@@ -314,8 +311,8 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
       position: relative;z-index: 0;
       &::after {@include before();
-        background: -webkit-linear-gradient(-122deg, transparent 65%, rgba($lt-blue, .8) 25%);
-        background: linear-gradient(110deg, transparent 65%, rgba($lt-blue, .8) 25%);
+        background: -webkit-linear-gradient(-122deg, transparent 65%, rgba($lt-blue, 1) 25%);
+        background: linear-gradient(110deg, transparent 65%, rgba($lt-blue, 1) 25%);
       }
     }
     .pay1, .pay2, .final {display: inline-block; width: 30%; float: left; margin-left: 2%; padding: 0 10px 10px}
@@ -329,7 +326,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       .icon {height: 50px;}
     }
   }
-
 }
 
 .charters {
@@ -477,21 +473,33 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   .full-page{
-    @include sec-bgimage('dolphin.jpg'); background-repeat: repeat;
+    @include sec-bgimage('dolphin.jpg');
+    // background-repeat: repeat;
     position: relative; z-index: 0;
-    &::before {@include before(); background-color: rgba($white, .96);}
+    &::before {@include before(); background-color: rgba($white, .95);}
   }
 
   .intro {@include sec-default(); margin-top:40px;
     padding: 90px 0 50px;
-    text-align: center;
-    .inner{width: 75%;}
+    // text-align: center;
+    .inner{width: 70%;}
     h3{ margin-bottom: 40px; }
-    .grad-link {@include gradient(lighten($orange, 10%), $yellow);color: $navy; box-shadow: 0px 0px 10px rgba($black, .2);}
+    h2{text-align: center; font-weight: bold;}
+    .grad-link {@include gradient(lighten($orange, 10%), $yellow);color: $navy; box-shadow: 0px 0px 10px rgba($black, .2); }
 
-    .text, .image-hlf{display: inline-block; float: right;width: 40%;}
+    .text, .image-hlf{display: inline-block; float: right;width: 42%;}
     .image-hlf {float: left; width: 55%;}
     .text {margin-top: 8%; padding-right: 20px;}
+
+    .r1, .r2{display: inline; float: left; width: 48%; }
+    .tgi{margin-bottom: 15px;}
+    .r2{margin-left: 2%; margin-top: 30px;}
+
+    p{text-align: left;}
+
+    .one, .two {display: inline-block; float: left;}
+    .one {width: 35%; margin-top: 30px}
+    .two{width: 55%; float: right;}
   }
 
   .box-full{@include sec-default(); padding:60px 0 40px;
@@ -524,24 +532,31 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   .faqs-full{@include sec-default(); padding:40px 0;
-    .inner {width: 90%;}
-    .box{@include sec-default(); margin-bottom:80px;
+    // .inner {width: 90%;}
+    .box{@include sec-default(); padding:80px 0 80px;
+      // margin-bottom:80px;
       position: relative;z-index: 0;
 
-      &::before{@include before();z-index: -2; overflow: hidden;
+      &::after{@include before();z-index: -2; overflow: hidden;
         // height: 40%; top:75%;
-        background-color: $yellow; height: 55%; top:65%; width: 111.15%; left:-5.55%;
-        -webkit-transform: skew(0deg, -4deg);
-        -moz-transform: skew(0deg, -4deg);
-        -o-transform: skew(0deg, -4deg);
-        -ms-transform: skew(0deg, -4deg);
-        transform: skew(0deg, -4deg);
+        // background-color: $yellow;
+        height: 55%; top:65%;
+
+        // width: 111.15%; left:-5.55%;
+        -webkit-transform: skew(0deg, -3deg);
+        -moz-transform: skew(0deg, -3deg);
+        -o-transform: skew(0deg, -3deg);
+        -ms-transform: skew(0deg, -3deg);
+        transform: skew(0deg, -3deg);
       }
     }
 
     .text, .image-hlf {@include sec-grid(left, 55%); position: relative; z-index: 2;}
     .image-hlf{width: 45%; z-index: 1;}
-    .text{ background-color: $f9; padding: 10px 30px 50px; margin-top: 70px; }
+    .text{ background-color: $f9;margin-top: 70px;
+      padding: 15px 25px 40px;
+      // padding: 10px 30px 50px;
+    }
 
     .faqs {@include sec-default();
       padding:20px 10px;
@@ -558,11 +573,11 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
       .uk-accordion-title{font-weight: 600; letter-spacing: .5px; font-size: 1.2rem;
         &:hover {color: inherit;}
-        // &::after {
-          // background: -webkit-linear-gradient(-122deg, transparent 50%, $blue 50%);
-          // background: linear-gradient(-4deg, transparent 50%, $blue 50%);
-        // }
+        &::after {position: absolute; right:0; vertical-align: middle}
 
+        &.long{width:90%;
+          &::after{top:20px;}
+        }
       }
 
       li.uk-open .uk-accordion-title{color: $blue}
@@ -570,51 +585,93 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       .uk-accordion-content {width: 85%; padding-bottom: 20px; margin-left:10px;}
     }
 
-    .box.one {
-      .text {margin-left: -3%;}
-      .image-hlf {margin-left:3%;}
+    // .box.two {
+    //   .text {margin-left: -3%;}
+    //   .image-hlf {margin-left:3%;}
+    // }
+
+    // .box.one, .box.three {
+    //   .text {margin-left: 3%; margin-top: 3%;padding:20px 30px 50px 40px;}
+    //   .image-hlf {margin-left: -3%; }
+    // }
+
+    // .box.three {
+    //   margin-top: 70px; margin-bottom:0px;
+    //   &::before{top: 74%;}
+    // }
+
+    .box.two::after{display: none;}
+
+    .box.two, .box.three{
+      @include sec-bgimage('gac-1.jpg'); background-position: center center;
+      &::before{@include before();background-color: rgba($white, .96);}
+      .text{width:45%;margin-left:-3%; }
+      .image-hlf {width:53%;}
     }
 
-    .box.two {margin-top: 70px; margin-bottom:0px;
-      .text {margin-left: 3%; margin-top: 3%;padding:20px 30px 50px 40px;}
-      .image-hlf {margin-left: -3%;}
-      &::before{top: 74%;}
+    .box.one, .box.three{
+      @include sec-bgimage('gac-1.jpg'); background-position: center center;
+
+      .text{width:45%;}
+      .image-hlf {margin-left:-3%; width:53%;}
+      &::after{background-color: rgba($f5, .9);}
+      &::before{@include before();background-color: rgba($f5, .96);}
     }
+
+
+
+
+    .box.one::after{height:100px; z-index: -1; top:-6%;
+      background: -webkit-linear-gradient(-12deg, rgba($f5,.65) 50%, $white 200%);
+      background: linear-gradient(-3deg, rgba($f5,.65) 50%, $white 20%);
+    }
+    // .box.three::after{height:100px; z-index: -1; top:-6%;
+    //   background: -webkit-linear-gradient(-12deg, rgba($f5, .75) 50%, $white 200%);
+    //   background: linear-gradient(-3deg, rgba($f5, .75) 50%, $white 20%);
+    // }
   }
 
   .box-full2{@include sec-default();
+    .inner{width: 98%;}
 
+    .faq-uk2 { padding:40px 0; margin-top:0;
+      li {padding: 20px 15px; border-top: 4px solid $yellow; margin-bottom: 10px; background-color:$white;}
 
-    .inner{width: 75%;
-      position: relative;z-index: 0;
-    // &::before{@include before();background-color: rgba($litest, .9);}
-    @include sec-bgimage('header-img.jpg');background-size: 65%; background-position: bottom right;
-
-      &::before {@include before();
-        background: -webkit-linear-gradient(-122deg, $litest 55%, transparent 25%);
-        background: linear-gradient(110deg, $litest 55%, transparent 25%);
+      .uk-accordion-title{@include chels(); font-size: 1.2rem; text-transform: none;color: $navy;
+        &:hover {color: $navy; opacity: .6;}
       }
+      p{color: $navy; width: 90%;}
     }
 
-    .faq-uk2 {width: 50%; padding:40px 0;
-      li {padding: 10px;}
-
-      .uk-accordion-title{@include chels(); font-size: 1.2rem; text-transform: none;
-        color: $navy;
-        &:hover {color: $navy; opacity: .6;}
-        // &::after {vertical-align: top;}
+    &.reg {padding:40px 0;
+      @include sec-bgimage('gac-1.jpg'); background-position: bottom right;
+      position: relative;z-index: 0;
+      // &::before{@include before(); background-color: rgba($f7, .95);}
+      &::before {@include before();
+        background: -webkit-linear-gradient(-122deg, rgba($navy, .9) 65%, rgba($f9, .9) 25%);
+        background: linear-gradient(112deg, rgba($navy, .9) 65%, rgba($f9, .9) 25%);
       }
-      p{color: $navy;}
+      // &::after {@include before();@include sec-bgimage('4.jpg'); z-index: -2; background-size: 45%; background-position: top right;}
+
+      .faq-uk2 {display: inline-block; float: left; width: 30%; margin-left: 3%;}
+      hr{width: 85%;
+        &::before{background-color: $light;}
+      }
+      .image-hlf {float: right; width: 42%; display: inline-block;}
     }
 
     &.rev {
-      @include sec-bgimage('gac-10.jpg'); background-size: 60%; background-position: center left;
+      @include sec-bgimage('gac-10.jpg');
+      // background-size: 55%; background-position: center left;
+
       &::before{
         background: -webkit-linear-gradient(-122deg, transparent 45%, $yellow 25%);
         background: linear-gradient(110deg, transparent 45%, $yellow 25%);
       }
 
-      .faq-uk2 {float: right;}
+      .faq-uk2 {float: right; width: 45%;
+        li{margin-bottom: 0; padding: 20px 10px;}
+      }
     }
 
   }
@@ -686,7 +743,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       &::after {@include before(); background-color: rgba($blue, .9); width: 117.7%; left:-8.9%;}
       &::before {@include before(); @include sec-bgimage('ocean-waves.jpg'); width: 117.7%; left:-8.9%; z-index: -2;}
 
-      .tg-li2 {
+      .tg-li2 {border-top: 4px solid $yellow;
         &.uno {margin-top: 10%;}
         display: inline-block; float: left; width: 30%; margin-left: 3%;
         background-color: $white; margin-top: 25px;
