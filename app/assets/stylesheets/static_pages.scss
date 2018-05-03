@@ -47,16 +47,23 @@ a {
 }
 
 .top-diag {@include sec-default();background-color: $yellow;
-  // padding: 220px 0 40px;
-  padding: 60px 0 0px;
-  position: relative;z-index: 0;
+  padding: 60px 0 0px;position: relative;z-index: 0;
   &::before{@include before(); height:100px; top:85%;
     background: -webkit-linear-gradient(-122deg, $f8 50%, $yellow 50%);
     background: linear-gradient(-4deg, $f8 50%, $yellow 50%);
   }
   h1{@include chels();}
-
   .text{width: 60%; margin-left: 10%;}
+
+  @include bp(tb) {
+    h1 {font-size: 30px;}
+    &::before{height:80px; top:70%;}
+  }
+
+  @include bp(tn) {
+    h1{font-size: 24px;}
+    &::before{height: 50px; top: 50%}
+  }
 }
 
 hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
@@ -558,18 +565,13 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     .text{width: 50%;}
   }
 
-  .full-page{
-    @include sec-bgimage('dolphin.jpg');
-    // background-repeat: repeat;
-    position: relative; z-index: 0;
+  .full-page{@include sec-bgimage('dolphin.jpg');position: relative; z-index: 0;
     &::before {@include before(); background-color: rgba($white, .95);}
   }
 
-  .intro {@include sec-default(); margin-top:40px;
-    padding: 90px 0 50px;
-    // text-align: center;
+  .intro {@include sec-default(); margin-top:40px; padding: 90px 0 50px;
     .inner{width: 70%;}
-    h3{ margin-bottom: 40px; }
+    h3{ margin-bottom: 40px;}
     h2{text-align: center; font-weight: bold; }
     .grad-link {@include gradient(lighten($orange, 10%), $yellow);color: $navy; box-shadow: 0px 0px 10px rgba($black, .2); }
 
@@ -588,47 +590,13 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     .two{width: 55%; float: right;}
   }
 
-  .box-full{@include sec-default(); padding:60px 0 40px;
-    .faq-uk2 {
-      li {position: relative;z-index: 0;border: 2px solid white;}
-      hr.fancy { width: 75%; border-top: 1px solid rgba($navy, .8);
-        display: none;
-        &::before{background-color: rgba($navy, .8);}
-      }
-
-      .uk-accordion-title{@include chels(); font-size: 1.2rem;padding: 20px;
-        color: $white; text-shadow: 0px 1px 1px rgba($black, .6);
-        &:hover {color: $white; opacity: .6;}
-      }
-      .uk-accordion-content{background-color: rgba($white, .95); padding:10px 20px;margin-top:0;}
-      p{color: $litest; width: 90%; color: $navy}
-    }
-
-    @include sec-bgimage('gac-2bg.jpg');background-position: center right;
-    position: relative;z-index: 0;
-    &::before{@include before();background-color: rgba($navy, .9);}
-
-    &::after{@include before(); height:90px; top:-7px;
-      background: -webkit-linear-gradient(-122deg, transparent 50%, rgba($white, .99) 50%);
-      background: linear-gradient(2deg, transparent 50%, rgba($white, .99) 50%);
-    }
-
-    ul{display: inline-block; width: 45%; float: left; padding-top: 40px;}
-    ul.two{float: right; padding-top: 25px};
-  }
 
   .faqs-full{@include sec-default(); padding:40px 0;
-    // .inner {width: 90%;}
     .box{@include sec-default(); padding:80px 0 80px;
-      // margin-bottom:80px;
       position: relative;z-index: 0;
 
       &::after{@include before();z-index: -2; overflow: hidden;
-        // height: 40%; top:75%;
-        // background-color: $yellow;
         height: 55%; top:65%;
-
-        // width: 111.15%; left:-5.55%;
         -webkit-transform: skew(0deg, -3deg);
         -moz-transform: skew(0deg, -3deg);
         -o-transform: skew(0deg, -3deg);
@@ -637,11 +605,10 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       }
     }
 
-    .text, .image-hlf {@include sec-grid(left, 55%); position: relative; z-index: 2;}
-    .image-hlf{width: 45%; z-index: 1;}
+    .text, .image-hlf {@include sec-grid(left, 45%); position: relative; z-index: 2;}
+    .image-hlf{width: 53%; z-index: 1;}
     .text{ background-color: $f9;margin-top: 70px;
       padding: 15px 25px 40px;
-      // padding: 10px 30px 50px;
     }
 
     .faqs {@include sec-default();
@@ -667,100 +634,92 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       }
 
       li.uk-open .uk-accordion-title{color: $blue}
-
       .uk-accordion-content {width: 85%; padding-bottom: 20px; margin-left:10px;}
     }
-
-    // .box.two {
-    //   .text {margin-left: -3%;}
-    //   .image-hlf {margin-left:3%;}
-    // }
-
-    // .box.one, .box.three {
-    //   .text {margin-left: 3%; margin-top: 3%;padding:20px 30px 50px 40px;}
-    //   .image-hlf {margin-left: -3%; }
-    // }
-
-    // .box.three {
-    //   margin-top: 70px; margin-bottom:0px;
-    //   &::before{top: 74%;}
-    // }
 
     .box.two::after{display: none;}
 
     .box.two, .box.three{
       @include sec-bgimage('gac-1.jpg'); background-position: center center;
       &::before{@include before();background-color: rgba($white, .96);}
-      .text{width:45%;margin-left:-3%; }
-      .image-hlf {width:53%;}
+      .text{margin-left:-3%; }
     }
 
     .box.one, .box.three{
       @include sec-bgimage('gac-1.jpg'); background-position: center center;
-
-      .text{width:45%;}
-      .image-hlf {margin-left:-3%; width:53%;}
+      .image-hlf {margin-left:-3%; }
       &::after{background-color: rgba($f5, .9);}
       &::before{@include before();background-color: rgba($f5, .96);}
     }
-
-
-
 
     .box.one::after{height:100px; z-index: -1; top:-6%;
       background: -webkit-linear-gradient(-12deg, rgba($f5,.65) 50%, $white 200%);
       background: linear-gradient(-3deg, rgba($f5,.65) 50%, $white 20%);
     }
-    // .box.three::after{height:100px; z-index: -1; top:-6%;
-    //   background: -webkit-linear-gradient(-12deg, rgba($f5, .75) 50%, $white 200%);
-    //   background: linear-gradient(-3deg, rgba($f5, .75) 50%, $white 20%);
-    // }
   }
 
-  .box-full2{@include sec-default();
-    .inner{width: 98%;}
-
-    .faq-uk2 { padding:40px 0; margin-top:0;
-      li {padding: 20px 15px; border-top: 4px solid $yellow; margin-bottom: 10px; background-color:$white;}
-
-      .uk-accordion-title{@include chels(); font-size: 1.2rem; text-transform: none;color: $navy;
-        &:hover {color: $navy; opacity: .6;}
-      }
-      p{color: $navy; width: 90%;}
+  @include bp(tb) {
+    .intro {margin-top:20px; padding-bottom: 20px;
+      .inner{width: 75%;}
     }
 
-    &.reg {padding:40px 0;
-      @include sec-bgimage('gac-1.jpg'); background-position: bottom right;
-      position: relative;z-index: 0;
-      // &::before{@include before(); background-color: rgba($f7, .95);}
-      &::before {@include before();
-        background: -webkit-linear-gradient(-122deg, rgba($navy, .9) 65%, rgba($f9, .9) 25%);
-        background: linear-gradient(112deg, rgba($navy, .9) 65%, rgba($f9, .9) 25%);
-      }
-      // &::after {@include before();@include sec-bgimage('4.jpg'); z-index: -2; background-size: 45%; background-position: top right;}
+    .faqs-full{padding:0;
+      .box{ padding:60px 0 50px;}
+      .text {width:52%; margin-top: 40px;}
+      .image-hlf{width: 48%;}
 
-      .faq-uk2 {display: inline-block; float: left; width: 30%; margin-left: 3%;}
-      hr{width: 85%;
-        &::before{background-color: $light;}
-      }
-      .image-hlf {float: right; width: 42%; display: inline-block;}
-    }
+      .faq-uk2 {
+        .uk-accordion-title{font-size: 1.1rem;}
 
-    &.rev {
-      @include sec-bgimage('gac-10.jpg');
-      // background-size: 55%; background-position: center left;
-
-      &::before{
-        background: -webkit-linear-gradient(-122deg, transparent 45%, $yellow 25%);
-        background: linear-gradient(110deg, transparent 45%, $yellow 25%);
-      }
-
-      .faq-uk2 {float: right; width: 45%;
-        li{margin-bottom: 0; padding: 20px 10px;}
+        li.uk-open .uk-accordion-title{color: $blue}
+        .uk-accordion-content {width: 90%;}
       }
     }
+  }
+
+  @include bp(nn) {
+    .intro {margin-top:20px; padding-bottom: 20px;
+      .inner{width: 90%;}
+      .one {margin-top: 20px}
+      .two{margin-right:4%;}
+    }
+  }
+
+  @include bp(tn) {
+    .intro {margin-top:0px; padding: 70px 0 20px;
+      h2 {font-size: 21px;}
+      h3{font-size: 16px; margin-bottom: 20px;}
+      .grad-link {font-size: 16px;}
+    }
+
+    .faqs-full{
+      .box.one::after{display: none;}
+      .box{ padding:30px 0;}
+      .inner {width: 95%;}
+      .text {width:65%; margin-top: 40px; position: relative; z-index: 2;}
+      .image-hlf{width: 45%; position: absolute; z-index: 1; right:1%;}
+
+      .faq-uk2 {
+        .uk-accordion-title{font-size: 1rem;}
+        .uk-accordion-content {width: 95%; margin-top: 10px; padding-bottom: 7px;}
+        li {padding-top: 10px;}
+        p {font-size: 15px;}
+      }
+
+      .box.two{
+        .image-hlf {left:1%;}
+        .text{float: right;}
+      }
+
+      .box.three .text{margin-left: 1%;}
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+
 
   }
+
 }
 
 .toy-time {
