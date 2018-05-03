@@ -212,6 +212,49 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   footer p{color:$navy;}
+
+  @include bp(tb) {
+    header .mobile-nav{margin-top:-3.5%;}
+    .site-intro {
+      height:500px;padding: 40px 40px;
+      .inner{margin-top:100px; width: 50%; margin-right: 5%;}
+      .phone-link { font-size: 35px; margin-bottom: 20px;}
+      h1 {font-size: 25px;}
+      h2 {font-size:28px;}
+    }
+
+    .sec1 { text-align: center; padding: 40px 0 100px;
+      .text {width: 92%;}
+      h1 {font-size:35px; }
+    }
+
+    .sec2 {
+      .image {width: 33%; display:inline-block; float: right; margin-top:-5%; }
+      .text-box {width: 55%; padding:60px 0; margin-left: 0;
+        h4{font-size: 20px;}
+        p{margin-bottom: 30px; font-size: 16px; padding-right:0px;}
+      }
+    }
+
+    .sec3 { padding:40px 0;
+      .inner{width: 90%;}
+      h3{ font-size: 20px;}
+      .image{width: 44%;}
+      .content-hlf{width: 50%; float: right; margin-top:0;}
+      .text{padding: 10px 20px 5px 5px;}
+    }
+
+    .sec4 {padding: 45px 0; background-size: 80%;
+      .text-box {width: 30%; @include center-block(); padding:20px; float:left; margin-left: 7%;
+        p{color: $navy; font-size:16px;}
+      }
+      &::after {@include before();
+        background: -webkit-linear-gradient(-122deg, $yellow 45%, transparent 25%);
+        background: linear-gradient(115deg, $yellow 45%, transparent 25%);
+      }
+      h4 {font-size: 19px;}
+    }
+  }
 }
 
 
@@ -449,11 +492,10 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
   .inner.list {padding: 0; width: 95%; }
   .charter-menu2{
-    display: inline; float: left;width:23%; margin:0 1% 30px; height:450px;
+    display: inline; float: left;width:23%; margin:0 1% 30px;
+    height:450px;
     background-color:$white; box-shadow: 0px 0px 12px rgba($black, .3);
-
     width:30%;
-
     padding:30px 15px;
     position: relative; z-index: 0;
     &::before {@include before(); height: 45%; @include sec-bgimage('7.png'); background-position: bottom right;}
@@ -491,7 +533,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       width: 73%;
       &::before {
         height: 50%;
-        // height: 60%;
         background-image: url(image_path('3-teal.png'));
       }
       .text{width:99%; @include center-block();}
@@ -537,18 +578,20 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
 
   @include bp(tb) {
-    .charter-menu{
-      width:65%; margin-left: 17%;
-      &::before {width:40%;}
-      &:nth-child(2n+2) {
-        .co-icon{float: right;}
-        .text {float: left;}
-        &::before {left:70%;}
-      }
+    .top-diag{
+      .text {width: 80%;}
     }
 
-    .charter-menu2{
-      width:48%;
+    .charter-menu2{height:385px;
+      width:45%; margin: 0 2% 30px;
+
+      &:first-child{margin-left: 2%;}
+      &:nth-child(2n+2) {float: right;}
+      &.sm{width:45%; margin: 0 2% 30px}
+
+      &.color5 {width:63%;}
+      &:last-child {width: 30%;}
+      &.color5, &:last-child {height: 450px;}
     }
   }
 }
@@ -637,24 +680,27 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       .uk-accordion-content {width: 85%; padding-bottom: 20px; margin-left:10px;}
     }
 
-    .box.two::after{display: none;}
+    .box.one {@include sec-bgimage('gac-11.jpg'); background-position: center center;
+      &::after{height:100px; z-index: -1; top:-6%;
+        background: -webkit-linear-gradient(-12deg, rgba($f5,.65) 50%, $white 200%);
+        background: linear-gradient(-3deg, rgba($f5,.65) 50%, $white 20%);
+      }
+    }
+    .box.two{
+      @include sec-bgimage('gac-1.jpg'); background-position: center center;
+      &::after{display: none;}
+    }
+    .box.three {@include sec-bgimage('gac-3.jpg'); background-position: center center;}
 
     .box.two, .box.three{
-      @include sec-bgimage('gac-1.jpg'); background-position: center center;
       &::before{@include before();background-color: rgba($white, .96);}
       .text{margin-left:-3%; }
     }
 
     .box.one, .box.three{
-      @include sec-bgimage('gac-1.jpg'); background-position: center center;
       .image-hlf {margin-left:-3%; }
       &::after{background-color: rgba($f5, .9);}
-      &::before{@include before();background-color: rgba($f5, .96);}
-    }
-
-    .box.one::after{height:100px; z-index: -1; top:-6%;
-      background: -webkit-linear-gradient(-12deg, rgba($f5,.65) 50%, $white 200%);
-      background: linear-gradient(-3deg, rgba($f5,.65) 50%, $white 20%);
+      &::before{@include before();background-color: rgba($f5, .98);}
     }
   }
 
@@ -716,7 +762,24 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   @media screen and (max-width: 767px) {
+    .intro {margin-top:0px; padding: 50px 0 20px; text-align: center;
+      .one, .two{width: 95%; @include center-block();}
+      h2{font-size: 18px; margin-bottom: 6px;}
+    }
 
+    .faqs-full{
+      .box{ padding:0px;}
+
+      .text {width:95%; margin-top: 0px; @include center-block(); padding-bottom: 17px;}
+      .image-hlf{display: none;}
+
+      .box.one, .box.two, .box.three{
+        .text{@include center-block();}
+        &::before{opacity: .88;}
+      }
+      .box.one{padding-top: 30px;}
+      .box.three{padding-bottom: 30px;}
+    }
 
   }
 
