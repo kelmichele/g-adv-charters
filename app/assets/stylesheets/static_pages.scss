@@ -255,6 +255,42 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       h4 {font-size: 19px;}
     }
   }
+
+  @media screen and (max-width:1020px) {
+    .site-intro {height:400px;}
+    .sec1 {
+     text-align: center; padding: 40px 0 100px;
+      .text {width: 100%;}
+      h1 {font-size:30px; width:100%;}
+    }
+
+    .sec2 {
+      .image {width: 30%; margin-top:-5%; }
+      .text-box {width: 65%; padding:60px 0;
+        h4{font-size: 19px;}
+      }
+    }
+
+    .sec3 { padding:40px 0;
+      .inner{width: 90%;}
+      h3{ font-size: 19px;}
+      p{font-size: 15px; margin-bottom: 5px;}
+      .image{width: 44%;}
+      .content-hlf{width: 53%;}
+      .text{padding: 10px 20px 5px 5px;}
+    }
+
+    .sec4 {padding: 10px 0; background-size: 80%;
+      .text-box {width: 35%; padding:20px; margin-left: 3%;
+        p{color: $navy; font-size:16px;}
+      }
+      &::after {@include before();
+        background: -webkit-linear-gradient(-122deg, $yellow 45%, transparent 25%);
+        background: linear-gradient(115deg, $yellow 45%, transparent 25%);
+      }
+      h4 {font-size: 19px;}
+    }
+  }
 }
 
 
@@ -398,77 +434,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
   .inner.list {margin-top:40px; width: 90%; padding-left: 25px; }
 
-  .charter-menu {
-    display: inline; float: left;
-    width:45%; margin: 40px 0 70px;
-    position: relative; z-index: 0;
-    &::before {@include before(); width: 52%; @include sec-bgimage('splash-bg.png'); top:-40px; left: -45px; }
-
-    &:nth-child(2n+2) {float: right;}
-
-    .co-icon {@include center-block();width:23%;display: inline-block;float: left;}
-    .icon {height:100px; @include center-block(); margin-top:55%;}
-
-    .text { display: inline-block;float: left; width: 75%; float: right; background-color: $f9; box-shadow: 0px 1px 20px rgba($black, .2);
-      padding:20px 20px 20px; margin-top:10px;
-    }
-    .title-line {width: 15%; height: 2px; background-color: $navy; margin-bottom: 15px;}
-    h4 {font-size: 1.3rem; @include chels();margin-bottom: 7px;}
-    .book-btn{font-style: italic; color: white; padding: 7px 15px; float: right; background-color: $yellow;font-weight: bold;box-shadow: 0px 0px 10px rgba($black, .2);}
-    p {font-size:15px;
-      span.dets{color: $white; }
-      span.info{font-weight: 600;}
-    }
-
-    &.color1 {
-      .co-icon::before, .book-btn, .title-line {
-        background-color: darken($yellow, 12%);
-        background-color: #86e5e1;
-      }
-      h4{color: darken($yellow, 12%); color: #86e5e1}
-      // &::before {@include sec-bgimage('splash-bg1.png');}
-    }
-
-    &.color2 {
-      .co-icon::before, .book-btn, .title-line {background-color: $blue;}
-      h4{color: $blue;}
-      &::before {@include sec-bgimage('splash-bg2.png');}
-    }
-
-    &.color3 {
-      .co-icon::before, .book-btn, .title-line {background-color: #bf81d9;}
-      h4{color: #bf81d9;}
-      &::before {@include sec-bgimage('splash-bg3.png');}
-    }
-
-    &.color4 {
-      .co-icon::before, .book-btn, .title-line {background-color:$smorange;}
-      h4{color: $smorange;}
-      // h4{color: darken($lt-blue, 10%);}
-      &::before {@include sec-bgimage('splash-bg5.png');}
-    }
-
-    &.color5 {
-      width: 75%;
-      margin-left: 12%;
-      .co-icon::before, .book-btn, .title-line {background-color: $blue;}
-      h4{color:$blue}
-      .co-icon {width: 17%;}
-      &::before {width:35%; left:-25px;}
-
-      .text{width:82%;
-        position: relative;z-index: 0;
-        &::after {@include before();
-          background: -webkit-linear-gradient(-122deg, transparent 56%, $blue 25%);
-          background: linear-gradient(115deg, transparent 56%, $blue 25%);
-        }
-      }
-
-      .reg, .extra{display: inline-block; width:55%; float:left;}
-      .extra{float: right;width: 35%; padding-top: 4%;}
-    }
-  }
-
   .callout {@include sec-default(); background-color: $f8;
     position: relative;z-index: 0;
     &::before {@include before(); height: 70%; top:30%; @include sec-bgimage('cheers.jpg');background-position: center center;}
@@ -563,18 +528,12 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       }
     }
 
-    // .left, .right {display: inline-block; float: left;}
-    // .left{width: 25%; }
-    // .right{width: 50%;}
-
     &::before {@include before();
       background: -webkit-linear-gradient(-122deg, $yellow 50%, $f5 25%);
       background: linear-gradient(115deg, $yellow 50%, $f5 25%);
       opacity: .97;
     }
   }
-
-
 
 
   @include bp(tb) {
@@ -594,6 +553,32 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       &.color5, &:last-child {height: 450px;}
     }
   }
+
+  @media screen and (max-width:1020px) {
+    .inner.list {margin-top:10px;}
+    .top-diag{
+      .text {width: 90%;}
+    }
+
+    .charter-menu2{height:auto;
+      &.color5, &:last-child {height: auto;}
+    }
+
+    .final {
+      padding:0px 0;
+      .inner{width: 90%;}
+      h4 {font-size: 18px;}
+      .text-blk{width: 42%;}
+    }
+  }
+
+  @include bp(md) {
+    .charters .final .text-blk {padding:0px 0;
+      .inner{width: 95%;}
+      .text-blk{width: 75%; @include center-block();}
+    }
+  }
+
 }
 
 .faq {
