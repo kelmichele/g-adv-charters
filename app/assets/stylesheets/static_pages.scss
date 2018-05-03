@@ -447,6 +447,88 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     // }
   }
 
+
+  .inner.list {padding: 0; width: 95%; }
+  .charter-menu2{
+    display: inline; float: left;width:23%; margin:0 1% 30px; height:450px;
+    background-color:$white; box-shadow: 0px 0px 12px rgba($black, .3);
+
+    padding:30px 15px;
+    position: relative; z-index: 0;
+    &::before {@include before(); height: 45%; @include sec-bgimage('7.png'); background-position: bottom right;}
+    text-align: center;
+
+    .icon {height:125px;}
+    h4 {font-size: 20px; @include chels();margin-bottom: 7px; text-align: center; color:$white; text-shadow: 0px 1px 4px rgba($black, .8)}
+    .title-line {width: 15%; height: 2px; background-color: $white; margin-bottom: 15px;@include center-block();}
+    .book-btn{font-style: italic; color: white; padding: 7px 15px; float: right; background-color: $yellow;font-weight: bold;text-shadow: 0px 0px 1px rgba($black, .4); box-shadow: 1px 1px 6px rgba($black, .4);}
+    p{margin:20px 0 15px;}
+
+    &.color1 {
+      .book-btn{
+        background-color: darken($yellow, 12%);
+        background-color: #86e5e1;
+      }
+      &::before {background-image: url(image_path('3-teal.png'));}
+    }
+
+    &.color2 {
+      .book-btn{background-color: $blue;}
+      &::before {background-image: url(image_path('3-orange.png'));}
+    }
+
+    &.color3 {
+      .book-btn{background-color: #bf81d9;}
+      &::before {background-image: url(image_path('3.png'));}
+    }
+
+    &.color4 {
+      .book-btn{background-color:$smorange;}
+    }
+
+    &.color5 {
+      width: 73%;
+      &::before { height: 60%;
+        background-image: url(image_path('7.png'));
+      }
+      .text{width:90%; @include center-block();}
+      p span{color:$blue; font-weight: bold;}
+
+
+      // .reg, .extra{display: inline-block; width:50%; float:left;}
+      // .extra{float: right;width: 45%; }
+    }
+  }
+
+  .final {@include sec-default(); background-color: $f8;
+    position: relative;z-index: 0;
+    padding:70px 0 50px; @include sec-bgimage('ocean-waves.jpg'); background-position: center center;
+    .inner{width: 90%;}
+    h4 {color: $navy; @include chels(); margin-bottom: 10px; font-size: 20px;}
+
+
+    .text-blk{@include sec-default();
+      display: inline-block; float: left; width: 42%;
+      &.out .icon {float:left; height: 70px;}
+      &.in {float: right;
+        .icon {float:right; height: 70px;}
+      }
+    }
+
+    // .left, .right {display: inline-block; float: left;}
+    // .left{width: 25%; }
+    // .right{width: 50%;}
+
+    &::before {@include before();
+      background: -webkit-linear-gradient(-122deg, $yellow 50%, $f5 25%);
+      background: linear-gradient(115deg, $yellow 50%, $f5 25%);
+      opacity: .97;
+    }
+  }
+
+
+
+
   @include bp(tb) {
     .charter-menu{
       width:65%; margin-left: 17%;
@@ -456,6 +538,10 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
         .text {float: left;}
         &::before {left:70%;}
       }
+    }
+
+    .charter-menu2{
+      width:48%;
     }
   }
 }
@@ -484,7 +570,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     // text-align: center;
     .inner{width: 70%;}
     h3{ margin-bottom: 40px; }
-    h2{text-align: center; font-weight: bold;}
+    h2{text-align: center; font-weight: bold; }
     .grad-link {@include gradient(lighten($orange, 10%), $yellow);color: $navy; box-shadow: 0px 0px 10px rgba($black, .2); }
 
     .text, .image-hlf{display: inline-block; float: right;width: 42%;}
