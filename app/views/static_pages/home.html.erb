@@ -5,22 +5,16 @@
 
 
 <div class="full-page">
-	<div class="site-intro">
-	<!-- <div uk-parallax="bgy: -200" class="site-intro"> -->
+	<!-- <div class="site-intro"> -->
+	<div uk-parallax="bgy: -100" class="site-intro">
 		<div class="inner">
-			<!-- <h1><span>Gulf Adventure</span> <b>Charters!</b></h1> -->
-			<h1>Call us today to book your next boating adventure!</h1>
+			<!-- <h1><span>Gulf Adventure</span> <b>Charters</b></h1> -->
+			<h2>Call us today to book your next boating adventure!</h2>
 			<div class="phone-link"><%= phone %></div>
 
 			<%= link_to "/book", :target => "_blank", class: "book-btn grad-link" do %>
-				Book Online Now
+				Book Now
 			<% end %>
-		</div>
-		<div class="segment">
-			<div class="seg seg1"></div>
-			<div class="seg seg2"></div>
-			<div class="seg seg3"></div>
-			<div class="seg seg4"></div>
 		</div>
 	</div>
 
@@ -29,7 +23,7 @@
 		<div class="inner">
 			<div class="text">
 				<h3>Located at the Flora-Bama Marina on the AL/FL line, we are in the heart of Orange Beach, AL and only minutes away from Gulf Shores, AL and Perdido Key, FL. </h3>
-				<%= link_to "Our Location", "/location", class:"grad-link" %>
+				<%= link_to "Our Location", "/location", class: "grad-link" %>
 			</div>
 		</div>
 	</div>
@@ -37,24 +31,16 @@
 	<div class="sec2">
 		<div class="inner">
 			<div class="text-box">
-				<h4>Are you ready for an adventure?</h4>
+				<h4>Are you ready for an <span>adventure?</span></h4>
 				<p>We offer PRIVATE boat charters to explore the beautiful waterways, islands, and wildlife in Orange Beach, Alabama.
 				Choose from our list of charters, or build your own. Whatever suits your interests! </p>
 
 				<%= link_to "Our Charters", "/charters", class: "grad-link" %>
+				<%= link_to "See the Boat", "/toy-time", class: "grad-link dos" %>
 			</div>
 			<div class="image"><%= image_tag('dolphins.png', alt: '', class: 'img-responsive')%></div>
 		</div>
 	</div>
-
-	<!-- <div class="sec-tt">
-		<div class="inner">
-			<div class="col-md-3">
-				<h4>The Charter Boat</h4>
-				<h3>Toy Time</h3>
-			</div>
-		</div>
-	</div> -->
 
 	<div class="sec3">
 		<div class="inner">
@@ -62,21 +48,12 @@
 
 			<div class="content-hlf">
 				<div class="text">
-					<!-- <h3>Toy Time</h3> -->
-				<h4>Locals &amp; Out of Town Friends</h4>
+					<h4>Locals &amp; Out of Town Friends</h4>
 					<h3>We've Got You Covered</h3>
 					<p>Relax and enjoy all the area has to offer by water with your closest friends and family, while our USCG approved captain drives you around.</p>
 					<p> From island hopping and sightseeing, to a quiet, sunset cruise, a Gulf Adventure Charter is a great way to entertain all ages!</p>
 				</div>
 				<div class="clearfix"></div>
-
-				<!-- <div class="link-row">
-					<%= link_to "/toy-time", class:"lr-link boat" do %>
-					<h4>The Charter Boat</h4>
-						<p>Toy Time</p>
-					<% end %>
-				</div> -->
-
 			</div>
 		</div>
 	</div>
