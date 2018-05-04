@@ -48,7 +48,7 @@ body{@include sec-default();
 
 .uk-offcanvas-bar.mnav{padding: 0;background: $navy;background-color: $navy;
   .uk-nav{@include sec-default();padding: 35px 20px;
-    li {border-bottom: 1px solid rgba($white, .25); margin-bottom:15px;}
+    li {border-bottom: 1px solid rgba($white, .15); margin-bottom:15px;}
     a {padding-left: 0; }
   }
 }
