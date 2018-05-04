@@ -64,6 +64,15 @@ header.site-header {@include sec-default(); text-align: center;
     .uk-offcanvas-content.mobile-nav { width: 15%; margin-top: 10px;}
     .menu-btn {padding:4px; }
   }
+
+  @include bp(sm) {
+    .sitenav.dos {
+      width:65%;
+      li {margin-top: 25px;}
+    }
+    .uk-offcanvas-content.mobile-nav { width: 15%; margin-top: 10px;}
+    .menu-btn {padding:4px; }
+  }
 }
 
 
