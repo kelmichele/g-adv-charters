@@ -377,10 +377,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     &.left{margin: 0 0 20px;}
   }
 
-  h2{@include chels();color: $navy;text-shadow: 0px 1px 0px rgba($black, .3)}
-  h3 {font-weight: bold;@include chels();}
-  p{margin-bottom: 10px; font-size: 17px;}
-
   .top-diag {padding-top: 45px;background-color: $navy; z-index: 1;
     .inner{width: 100%;}
     &::before{
@@ -401,10 +397,14 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     @include sec-bgimage('texture1.png'); background-size: 20%; background-repeat: repeat;
     position: relative; z-index: 0;
     &::before{@include before(); background-color: rgba($f9, .9);}
+
+    h2{@include chels();color: $navy;text-shadow: 0px 1px 0px rgba($black, .3)}
+    h3 {font-weight: bold;@include chels();}
+    p{margin-bottom: 10px; font-size: 17px;}
   }
 
   .intro {
-    @include sec-default();padding:80px 0 00px;
+    @include sec-default();padding:80px 0 0px;
     position: relative;z-index: 0;
 
     p{color:$navy;margin-bottom: 0px; font-size: 16px;}
@@ -413,21 +413,20 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     .text-hlf{
       width:40%;
       margin-left:-5%;
-      // width:42%;
-      // display:inline-block; float: left;
       background-color: rgba($f9, .9);
       margin-top:7%; padding:10px 20px;
-      // border-top-right-radius: 44%;
       &::before {display: none;}
     }
     h3 {color: $smorange; margin-bottom:0px;}
-    // h3 span {color: $blue;}
   }
 
   .contact-info {
     @include sec-default(); padding:90px 0;
     .image-hlf, .text-hlf {@include sec-grid(left, 40%); position: relative;z-index: 1;}
-    .image-hlf {width:44%; }
+    .image-hlf {width:44%;
+      img.mobile{display: none;}
+    }
+
 
     h4 {margin-bottom: 5px; font-weight: bold; color: $blue; }
     .title-line {background-color: $blue; height:2px;}
@@ -449,27 +448,15 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     }
 
     .grad-link {
-      // @include gradient(lighten($yellow, 3%), $yellow);
       @include gradient($lt-blue, $blue);
       color:$white; text-shadow: 0px 1px 1px rgba($black, .6);
-      // margin-left: 15%;
       margin-top: 10px;
       box-shadow: 0px 1px 5px rgba($black, .25);
     }
   }
 
   .payment-info{
-    @include sec-default();
-    background-color: $navy;
-
-    .pay1, .pay2{width:95%; @include center-block(); margin-top:20px;}
-    h2{margin-bottom: 0px; color: $blue; text-shadow: 0px 1px 1px rgba($navy, .5); text-align: center;}
-    h3{margin-bottom: 5px; color: $lt-blue; }
-    p{color: $white;font-size: 16px;}
-  }
-
-  .payment-info{
-    @include sec-bgimage('tt6.jpg'); background-position: center center;
+    background-color: $navy;@include sec-default(); @include sec-bgimage('tt6.jpg'); background-position: center center;
     .inner{@include sec-default();padding: 10px 2.5%; text-align: center;
       background-color: rgba($yellow, .97);
 
@@ -480,15 +467,131 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       }
     }
     .pay1, .pay2, .final {display: inline-block; width: 30%; float: left; margin-left: 2%; padding: 0 10px 10px}
-    h3 {color: $blue;}
+    h3 {color: $blue;margin-bottom: 5px; margin-top:25px;}
     p {font-size:15px; color:$navy}
     hr.fancy{border-top: 1px solid rgba($navy, .6);
       &::before{background-color: $navy;}
     }
     .final {float: right; padding: 20px;
-      p{color: $navy; @include chels(); font-weight: normal;}
+      p{color: $navy; font-size: 16px; @include chels(); font-weight: normal;}
       .icon {height: 50px;}
     }
+  }
+
+  @include bp(tb) {
+    .top-diag {
+      .text{margin-left: 4%}
+    }
+
+    .intro {padding-top:60px;
+      .text-hlf{width:60%;margin-left:0;}
+    }
+
+    .contact-info {
+      padding:40px 0;
+
+      .image-hlf{float: left; margin-left:4%; width: 45%;
+        img.mobile{display: block;}
+        img.fw{display: none;}
+      }
+
+      .text-hlf {width:45%; margin-left:4%; padding:0;
+        .text{width: 100%;}
+      }
+      h2 {margin-left: 0; font-size: 22px; }
+    }
+
+    .payment-info{
+      .inner{padding: 10px 1.5%;
+        &::after {@include before();
+          background: -webkit-linear-gradient(-122deg, transparent 52%, rgba($lt-blue, 1) 25%);
+          background: linear-gradient(180deg, transparent 52%, rgba($lt-blue, 1) 25%);
+        }
+      }
+      .pay1, .pay2, .final {width: 30%; margin-left: 2%;}
+      .pay1, .pay2{width: 47%; margin-left: 2%; margin-bottom: 30px;}
+      h3 {margin-top:15px;}
+
+      .final {width:85%; @include center-block(); padding: 20px 10px 0px;}
+    }
+  }
+
+  @include bp(tn) {
+    .top-diag { padding-top: 25px;}
+    .intro {padding-top:60px;
+      .text-hlf{width:95%;@include center-block();}
+    }
+
+    .contact-info { padding: 40px 0 25px;
+      .image-hlf{margin-left:2%; width: 45%;}
+
+      .text-hlf {width:48%; margin-top: 0; }
+      h2 {font-size: 20px; }
+      p {font-size: 15px; margin-bottom: 10px;}
+    }
+
+    .payment-info{
+      .inner{padding: 10px 1.5%;
+        &::after {@include before();
+          background: -webkit-linear-gradient(-122deg, transparent 58%, rgba($lt-blue, 1) 25%);
+          background: linear-gradient(180deg, transparent 58%, rgba($lt-blue, 1) 25%);
+        }
+      }
+      h3 {margin-top:10px;}
+
+      .final {width:90%;
+        .icon {height: 40px;}
+      }
+    }
+  }
+
+  @include bp(md) {
+
+    .intro {padding:40px 0; text-align: center; background-size: cover;
+      // &::before {@include before(); background-color: rgba($navy, .65);}
+      .text-hlf{@include sec-default(); margin-top: 0;background-color: rgba($f9, .98);}
+    }
+
+    .contact-info { padding: 40px 0 25px;
+      .image-hlf{display: none;}
+
+      .text-hlf {width:75%; @include center-block(); text-align: center;}
+      h2 {font-size: 18px; text-align: center;}
+      hr.fancy{@include center-block();}
+    }
+
+    .payment-info{
+      .inner::after {
+        background: -webkit-linear-gradient(-122deg, transparent 70%, rgba($lt-blue, 1) 25%);
+        background: linear-gradient(180deg, transparent 70%, rgba($lt-blue, 1) 25%);
+      }
+
+      .pay1, .pay2 {width: 90%; @include center-block(); margin-bottom: 15px;}
+      .final {width:90%;
+        .icon {height: 40px;}
+      }
+    }
+  }
+
+  @include bp(ph) {
+    .intro {padding:25px 0;
+      .inner {width: 95%;}
+      h3 {font-size: 16px;}
+    }
+    .contact-info { padding: 25px 0 10px;
+      .text-hlf {width:95%; }
+    }
+
+    .payment-info {
+      .pay1, .pay2, .final {width: 95%; margin-bottom: 0;}
+      .pay2 h3 {margin-top: 0px;}
+      .inner::after {display: none;}
+      .final p {font-size: 15px;}
+    }
+  }
+
+  @include bp(xs) {
+
   }
 }
 
@@ -825,6 +928,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
   @media screen and (max-width: 767px) {
     .top-diag {
+      .text {width: 90%;}
       padding-top:30px;
       h1 {font-size:20px;}
     }
