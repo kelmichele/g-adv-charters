@@ -101,7 +101,7 @@
   }
 
   @else if $point == dt {
-    @media (min-width: 1200px) { @content ; }
+    @media (min-width: 1366px) { @content ; }
   }
 
   @else if $point == xl {
