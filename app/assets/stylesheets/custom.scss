@@ -46,4 +46,10 @@ body{@include sec-default();
   box-shadow: 0px 0px 10px rgba(black, .35);
 }
 
-.uk-offcanvas-bar.mnav {background: $navy;background-color: $navy; padding: 40px 20px;}
+.uk-offcanvas-bar.mnav{padding: 0;background: $navy;background-color: $navy;
+  .uk-nav{@include sec-default();padding: 35px 20px;
+    li {border-bottom: 1px solid rgba($white, .25); margin-bottom:15px;}
+    a {padding-left: 0; }
+  }
+}
+

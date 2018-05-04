@@ -179,14 +179,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       background: linear-gradient(115deg, $yellow 45%, transparent 25%);
     }
     h4 {color: $navy; font-size: 25px; @include chels();}
-
-
-    // background-size: 64%; background-position: left center;
-    // .text-box { float:right; margin-left: 0; margin-right: 5%;}
-    //  &::after {
-    //   background: -webkit-linear-gradient(-122deg, $yellow 45%, transparent 25%);
-    //   background: linear-gradient(-115deg, $yellow 45%, transparent 25%);
-    // }
   }
 
   footer p{color:$navy;}
@@ -336,12 +328,13 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
     .sec1{padding-top: 20px;}
 
-    .sec2 {
+    .sec2 {background-repeat: repeat;
       .image {width: 18%; margin-left: -9%; }
-      .text-box{width: 94%;
-        p {margin-bottom: 20px;}
-        .grad-link {padding: 10px 20px; }
-        .grad-link.dos{margin-left: 3%;}
+      .text-box{width: 94%; padding:25px 0;
+        h4 {margin-bottom: 10px;}
+        p {margin-bottom: 15px;}
+        .grad-link {padding: 10px 20px; width: 55%; text-align:center; display: block; margin-bottom: 10px;}
+        .grad-link.dos{margin-left: 0;}
       }
     }
 
@@ -353,6 +346,21 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     .sec4 {
       h4 {font-size:17px; margin-bottom: 7px;}
       p{font-size:15px;}
+    }
+  }
+
+  @include bp(sm) {
+    .site-intro {
+      padding: 0; height: auto;
+      .inner{margin-top:0px; @include sec-default(); padding: 120px 20px 10px; background-color: rgba($black, .5);}
+      h2 {font-size:20px}
+      .phone-link{font-size:25px;}
+    }
+
+    .sec4 {background-size: 100%;
+      &::after {display: none;}
+      &::before{@include before(); background-color: rgba($yellow, .9);}
+      .text-box{@include sec-default();}
     }
   }
 }

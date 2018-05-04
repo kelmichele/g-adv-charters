@@ -42,14 +42,27 @@ header.site-header {@include sec-default(); text-align: center;
   }
 
   @include bp(tb) {
-    .logo-nav {width:12%; float:left; margin-left: 10%; margin-top: 10px;}
     .sitenav.uno {display: none;}
-    .mobile-nav {display: block;float: right; margin-left: 20%; margin-right: 9%;}
-    .sitenav.dos {width:60%;
-      li {margin-top:10px;}
-    }
-    .menu-btn {float:right; background-color: $white; padding:6px; border-radius: 5px;}
 
+    .logo-nav {width:30%; float:left; margin-top: 15px;
+      .logo-img{width:130px; float: left;}
+    }
+
+    .sitenav.dos {width:50%; float: none;
+      li {margin-top:50px;}
+    }
+    .uk-offcanvas-content.mobile-nav {display: inline-block; float: right; width: 20%; margin-top: 60px;}
+    .menu-btn {float:right; background-color: $white; padding:6px; border-radius: 5px;}
+  }
+
+  @include bp(ph) {
+    .sitenav.dos {
+      width:60%; float: right;
+      li .navlink {font-size: 16px;}
+      li.icons{margin-right: 0; float: right}
+    }
+    .uk-offcanvas-content.mobile-nav { width: 15%; margin-top: 10px;}
+    .menu-btn {padding:4px; }
   }
 }
 
