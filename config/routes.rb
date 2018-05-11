@@ -9,5 +9,9 @@ Rails.application.routes.draw do
 
 	get 'fb', to: 'links#fb'
 	get 'insta', to: 'links#insta'
+	get 'book', to: 'links#book'
+	get 'opt', to: 'links#opt'
+	get 'gift', to: 'links#gift'
+	get 'hsdh', to: 'links#hsdh'
 
 end

@@ -8,8 +8,8 @@
 		</div>
 
 		<div class="foot-block bkbtn">
-			<br><br>
-			<!-- <%= link_to "Book Now", "", class: 'grad-link', target: '_blank' %>  -->
+			<br>
+			<%= link_to "Book Now!", "/book", class: 'grad-link', target: '_blank' %>
 		</div>
 
 		<div class="foot-block info">
@@ -31,4 +31,9 @@
 			</div>
 		</div>
 	</div>
+	<div class="inside copy-row">
+	  <p class="copy">Copyright <%= Time.now.year %>. All rights reserved. </p>
+		<p class="hs">Design by <b><%= link_to "High Seas Design House", "/hsdh" %></b>.</p>
+	</div>
+  <a href="#" class="scroll-up"></a>
 </footer>

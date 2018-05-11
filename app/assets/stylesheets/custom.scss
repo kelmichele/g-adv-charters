@@ -40,7 +40,6 @@ body{@include sec-default();
   }
 }
 
-
 .full-page{
 	background-color: $white; padding-top:0;
   box-shadow: 0px 0px 10px rgba(black, .35);
@@ -52,4 +51,3 @@ body{@include sec-default();
     a {padding-left: 0; }
   }
 }
-
