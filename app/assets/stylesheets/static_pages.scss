@@ -62,8 +62,8 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 .grad-sec{@include sec-default(); padding: 20px 0; @include gradient($blue, $navy);}
 
 
-.home {overflow-x: hidden;
-
+.home {
+  // overflow-x: hidden;
   body{@include sec-default();
     position: relative;z-index: 0;
     &::before { display: none;}
@@ -80,7 +80,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
   .site-intro {
     @include sec-default();@include sec-bgimage('home-intro.jpg');
-    // background-size:cover;
     height:600px;
     padding: 140px 40px;
     text-align: center;
@@ -92,7 +91,15 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
     h1 {color: $lt-blue; @include chels(); font-size: 30px;}
     h2 {color: $white;font-size:35px; line-height: 1.5em; @include chels(); line-height: 1.2em;}
-    .book-btn {background: $yellow; color:$navy}
+    .book-btn {background: $yellow; color:$navy;
+      &:hover{opacity: 1; background-color: lighten($yellow, 30%);}
+    }
+
+    .mobile-extras {
+      @include sec-default();margin-top: 10px;
+      i{width:20px; height:20px; }
+      display:none;
+    }
   }
 
   .sec1, .sec2, .sec3, .sec4 {@include sec-default(); padding: $fw-pad;
@@ -158,11 +165,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
     &.boat{@include sec-bgimage('gac-8.jpg'); background-position: center right;
       .boat-link{float: left; width: 38%;color: $lt-blue; font-size: 16px; font-weight: bold; letter-spacing: 2px}
-      &::before {@include before();
-        background-color: rgba($navy, .8);
-        // background: -webkit-linear-gradient(-122deg, rgba($navy, .95) 44%, transparent 25%);
-        // background: linear-gradient(112deg, rgba($navy, .95) 44%, transparent 25%);
-      }
+      &::before {@include before();background-color: rgba($navy, .8);}
     }
 
     &.loc {
@@ -205,7 +208,10 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   @include bp(tb) {
-    header .mobile-nav{margin-top:-3.5%;}
+    // header .mobile-nav{margin-top:-3.5%;}
+    header.site-header {position:relative;
+      .logo-nav {margin: 5px 0;}
+    }
     .site-intro {
       height:500px;padding: 40px 40px;
       .inner{margin-top:100px; width: 50%; margin-right: 5%;}
@@ -249,7 +255,19 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   @include bp(tn) {
-    .site-intro {height:400px;}
+    header.site-header{
+      .uk-offcanvas-content.mobile-nav{margin-top:40px;}
+      .sitenav.dos li.navli {margin-top:25px;}
+      .sitenav.dos li.icons{margin-top: 5px;}
+    }
+
+    .site-intro {
+      height: auto;
+      padding: 0;
+      .inner{margin-top:0px; @include sec-default();height:350px; padding: 50px 20px 20px; background-color: rgba($black, .2);}
+      h2{width: 60%; @include center-block();}
+    }
+
     .sec1 {padding: 40px 0 80px;
       .text {width: 100%;}
       h1 {font-size:27px; width:100%;}
@@ -292,14 +310,16 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     }
   }
 
-  @include bp(mb) {
-    .site-intro {height:350px;
-      .inner{margin-top:70px; width: 60%; margin-right: 0; background-color: rgba($black, .15);}
+  @include bp(pl) {
+    .site-intro {
+      .inner {background-color: rgba($black, .4); height:280px;}
       .phone-link { font-size: 30px; margin-bottom: 10px;}
       h2 {font-size:23px; margin-top: 10px;}
     }
+  }
 
-    .sec1 {padding: 0px 0 50px;}
+  @include bp(mb) {
+    .sec1 {padding: 20px 0 30px;}
 
     .sec2 {
       .image {width: 20%; margin-left: -3%; position: absolute;}
@@ -327,8 +347,16 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   @include bp(ph) {
-    .site-intro {padding: 20px 10px 40px; background-color: $f9;height: auto;
-      h2 {font-size:20px}
+    header.site-header{
+      .uk-offcanvas-content.mobile-nav{margin-top:40px;}
+      .sitenav.dos {margin-top:0px; padding:0}
+      .sitenav.dos li.navli {margin-top: 10px;}
+    }
+
+    .site-intro {
+      background-color:$lt-blue;
+      .inner {height:auto;padding: 20px 20px 40px;}
+      h2 {font-size:20px; width:90%;}
       .phone-link{font-size:25px;}
     }
 
@@ -356,17 +384,17 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   @include bp(sm) {
-    .site-intro {
-      padding: 0; height: auto;
-      .inner{margin-top:0px; @include sec-default(); padding: 120px 20px 10px; background-color: rgba($black, .5);}
-      h2 {font-size:20px}
-      .phone-link{font-size:25px;}
-    }
+    // .site-intro {
+    //   padding: 0; height: auto;
+    //   .inner{margin-top:0px; @include sec-default(); padding: 120px 20px 10px; background-color: rgba($black, .5);}
+    //   h2 {font-size:20px}
+    //   .phone-link{font-size:25px;}
+    // }
 
     .sec4 {background-size: 100%;
       &::after {display: none;}
       &::before{@include before(); background-color: rgba($yellow, .9);}
-      .text-box{@include sec-default();}
+      .text-box{@include sec-default(); margin:0;}
     }
   }
 }
