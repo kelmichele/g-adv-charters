@@ -6,39 +6,36 @@
 /*****************************************/
 header.site-header {@include sec-default(); text-align: center;
   .mobile-nav {display: none;}
-  .upper-hd {@include sec-default(); padding: 5px 0;
-    .logo-img{width:150px; @include center-block();}
-  }
 
-  nav {
-    @include sec-default(); @include ease();
-    &.uk-sticky.uk-sticky-fixed.uk-active{box-shadow: 0px 1px 1px rgba($black, .2);background-color: $white; }
-  }
-  .inline-nli {display: inline-block;width: 10%; float: left;margin-top: 75px;
-    font-size: 15px;
-    font-weight: 600; font-family: $open; font-size:18px; color: $white; letter-spacing: 1px;line-height: 1.8em;
-    &.phone-nli {float: right;}
-    a {font-weight: 600; font-family: $raleway; font-size:18px; color: $white; letter-spacing: 1px; text-shadow: 0px 1px 1px rgba(black, .2);}
-  }
-
-  .sitenav {width: 42%; display: inline-block;
+  .nav {@include sec-default();}
+  .sitenav {width: 44%; display: inline-block;
     margin: auto; float:none; padding:10px 0;
     &.uno {float:left;}
     &.dos {float:right;}
   }
   .sitenav li{display: inline-block;
-    &.navli {margin: 0px 2.4% 0; margin-top: 65px;}
+    &.navli {margin: 0px 2% 0; margin-top: 65px;}
     &.ft-only {display: none;}
     .navlink {font-family: $chels; font-size:18px; color: $white; letter-spacing: 1.5px; text-shadow: 0px 1px 1px rgba($black, .5);}
+    .navlink.child{ font-size: 16px;}
   }
   .logo-nav {display:inline-block; width:12%; @include ease(); margin-top: 7px; margin-bottom: 0;}
 
-  .upper {@include sec-default(); padding: 5px 0 0;
-    display: none;
-    .hd-social, .phone-hd {display:inline-block; float: right;}
-    .phone-hd{float: right;}
 
-    i {margin-right: 20px; color: $white;}
+
+  @media screen and (max-width:1200px) {
+    .sitenav li{
+      &.navli {margin: 0px 1.5% 0; margin-top: 50px;}
+      .navlink { font-size:16.5px; letter-spacing: 1.5px; }
+    }
+    .sitenav.uno li::first-child {margin-left: 0;}
+    .sitenav.dos li::last-child {margin-right: 0;}
+  }
+
+  @media screen and (max-width:1102px) {
+    .sitenav li.navli { margin-top: 40px;
+      &.icons {margin-top: 0;}
+    }
   }
 
   @include bp(tb) {
@@ -48,30 +45,53 @@ header.site-header {@include sec-default(); text-align: center;
       .logo-img{width:130px; float: left;}
     }
 
-    .sitenav.dos {width:50%; float: none;
-      li {margin-top:50px;}
+    .sitenav.dos {width:60%; float: none;
+      li {margin: 40px 2% 0;
+        .navlink {letter-spacing: 1px;}
+      }
     }
-    .uk-offcanvas-content.mobile-nav {display: inline-block; float: right; width: 20%; margin-top: 60px;}
-    .menu-btn {float:right; background-color: $white; padding:6px; border-radius: 5px;}
+    .uk-offcanvas-content.mobile-nav {display: inline-block; float: right; width: 10%; margin-top: 50px;}
+    .menu-btn {float:right; background-color: $white; padding:4px 5px; border-radius: 5px;}
+  }
+
+  @include bp(tn) {
+    .logo-nav {width:25%; }
+    .sitenav.dos {
+      li {margin: 40px 2% 0;
+        .navlink {font-size: 15.5px;}
+        &.icons {width:100%; margin-top: 5px; }
+      }
+    }
+    .uk-offcanvas-content.mobile-nav {margin-top: 55px; }
+    .menu-btn {float:none}
+  }
+
+  @media screen and (max-width: 665px) {
+    .sitenav.dos {margin-top:25px;
+      li {@include sec-default(); margin: 5px 0 0;
+        .navlink {font-size: 15.5px;}
+        &.icons {width:100%; margin-top: 5px; }
+      }
+    }
   }
 
   @include bp(ph) {
-    .sitenav.dos {
-      width:60%; float: right;
-      li .navlink {font-size: 16px;}
-      li.icons{margin-right: 0; float: right}
-    }
-    .uk-offcanvas-content.mobile-nav { width: 15%; margin-top: 10px;}
-    .menu-btn {padding:4px; }
+    // .sitenav.dos {
+    //   width:60%; float: right;
+    //   li .navlink {font-size: 16px;}
+    //   li.icons{margin-right: 0; float: right}
+    // }
+    // .uk-offcanvas-content.mobile-nav { width: 15%; margin-top: 10px;}
+    // .menu-btn {padding:4px; }
   }
 
   @include bp(sm) {
-    .sitenav.dos {
-      width:65%;
-      li {margin-top: 25px;}
-    }
-    .uk-offcanvas-content.mobile-nav { width: 15%; margin-top: 10px;}
-    .menu-btn {padding:4px; }
+    // .sitenav.dos {
+    //   width:65%;
+    //   li {margin-top: 25px;}
+    // }
+    // .uk-offcanvas-content.mobile-nav { width: 15%; margin-top: 10px;}
+    // .menu-btn {padding:4px; }
   }
 }
 
