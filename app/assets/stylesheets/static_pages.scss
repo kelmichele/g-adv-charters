@@ -384,13 +384,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   @include bp(sm) {
-    // .site-intro {
-    //   padding: 0; height: auto;
-    //   .inner{margin-top:0px; @include sec-default(); padding: 120px 20px 10px; background-color: rgba($black, .5);}
-    //   h2 {font-size:20px}
-    //   .phone-link{font-size:25px;}
-    // }
-
     .sec4 {background-size: 100%;
       &::after {display: none;}
       &::before{@include before(); background-color: rgba($yellow, .9);}
