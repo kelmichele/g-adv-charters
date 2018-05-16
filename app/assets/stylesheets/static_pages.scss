@@ -487,13 +487,14 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
         background: linear-gradient(110deg, transparent 65%, rgba($lt-blue, 1) 25%);
       }
     }
-    .pay1, .pay2, .final {display: inline-block; width: 30%; float: left; margin-left: 2%; padding: 0 10px 10px}
-    h3 {color: $blue;margin-bottom: 5px; margin-top:25px;}
+    // .pay1, .pay2, .final {display: inline-block; width: 30%; float: left; margin-left: 2%; padding: 0 10px 10px}
+    .pay1, .final {display: inline-block; width: 60%; float: left; margin-left: 1%; padding: 0 10px 10px}
+    h3 {color: $blue;margin-bottom: 0px; margin-top:15px;}
     p {font-size:15px; color:$navy}
-    hr.fancy{border-top: 1px solid rgba($navy, .6);
+    hr.fancy{border-top: 1px solid rgba($navy, .6); width:20%; margin: 5px auto 15px;
       &::before{background-color: $navy;}
     }
-    .final {float: right; padding: 20px;
+    .final {float: right; width:30%; padding: 20px; margin-top: 3%;
       p{color: $navy; font-size: 16px; @include chels(); font-weight: normal;}
       .icon {height: 50px;}
     }
@@ -524,16 +525,20 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
     .payment-info{
       .inner{padding: 10px 1.5%;
-        &::after {@include before();
-          background: -webkit-linear-gradient(-122deg, transparent 52%, rgba($lt-blue, 1) 25%);
-          background: linear-gradient(180deg, transparent 52%, rgba($lt-blue, 1) 25%);
+        // &::after {@include before();
+        //   background: -webkit-linear-gradient(-122deg, transparent 52%, rgba($lt-blue, 1) 25%);
+        //   background: linear-gradient(180deg, transparent 52%, rgba($lt-blue, 1) 25%);
+        // }
+
+        &::after {
+          background: -webkit-linear-gradient(-122deg, transparent 65%, rgba($lt-blue, 1) 25%);
+          background: linear-gradient(90deg, transparent 65%, rgba($lt-blue, 1) 25%);
         }
       }
-      .pay1, .pay2, .final {width: 30%; margin-left: 2%;}
-      .pay1, .pay2{width: 47%; margin-left: 2%; margin-bottom: 30px;}
-      h3 {margin-top:15px;}
-
-      .final {width:85%; @include center-block(); padding: 20px 10px 0px;}
+      // .pay1, .pay2{width: 47%; margin-left: 2%; margin-bottom: 30px;}
+      .pay1 {width: 63%;}
+      .final {width:35%; }
+      // .final {width:85%; @include center-block(); padding: 20px 10px 0px;}
     }
   }
 
@@ -552,22 +557,14 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     }
 
     .payment-info{
-      .inner{padding: 10px 1.5%;
-        &::after {@include before();
-          background: -webkit-linear-gradient(-122deg, transparent 58%, rgba($lt-blue, 1) 25%);
-          background: linear-gradient(180deg, transparent 58%, rgba($lt-blue, 1) 25%);
-        }
-      }
-      h3 {margin-top:10px;}
-
-      .final {width:90%;
-        .icon {height: 40px;}
-      }
+      .inner::after {display: none;}
+      .pay1, .final {width: 95%; @include center-block(); padding:0;}
+      .final .icon {height: 40px;}
+      h3 {font-size: 16px;}
     }
   }
 
   @include bp(md) {
-
     .intro {padding:40px 0; text-align: center; background-size: cover;
       // &::before {@include before(); background-color: rgba($navy, .65);}
       .text-hlf{@include sec-default(); margin-top: 0;background-color: rgba($f9, .98);}
@@ -579,18 +576,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       .text-hlf {width:75%; @include center-block(); text-align: center;}
       h2 {font-size: 18px; text-align: center;}
       hr.fancy{@include center-block();}
-    }
-
-    .payment-info{
-      .inner::after {
-        background: -webkit-linear-gradient(-122deg, transparent 70%, rgba($lt-blue, 1) 25%);
-        background: linear-gradient(180deg, transparent 70%, rgba($lt-blue, 1) 25%);
-      }
-
-      .pay1, .pay2 {width: 90%; @include center-block(); margin-bottom: 15px;}
-      .final {width:90%;
-        .icon {height: 40px;}
-      }
     }
   }
 
@@ -604,15 +589,8 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     }
 
     .payment-info {
-      .pay1, .pay2, .final {width: 95%; margin-bottom: 0;}
-      .pay2 h3 {margin-top: 0px;}
-      .inner::after {display: none;}
       .final p {font-size: 15px;}
     }
-  }
-
-  @include bp(xs) {
-
   }
 }
 
