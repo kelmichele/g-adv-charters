@@ -177,7 +177,8 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
   }
 
   .sec4 {background-color: $f9; padding: $fw-pad;
-    @include sec-bgimage('cheers.jpg'); background-size: 64%; background-position: right center;
+    // @include sec-bgimage('cheers.jpg'); background-size: 64%; background-position: right center;
+    @include sec-bgimage('gac-summer6.jpg'); background-size: 64%; background-position: right center;
     .text-box {width: 30%; @include center-block(); padding:20px; float:left; margin-left: 7%;
       p{color: $navy; font-size:18px;}
     }
