@@ -444,10 +444,10 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
   .contact-info {
     @include sec-default(); padding:90px 0;
-    .image-hlf, .text-hlf {@include sec-grid(left, 40%); position: relative;z-index: 1;}
-    .image-hlf {width:44%;
-      img.mobile{display: none;}
-    }
+    // .image-hlf, .text-hlf {@include sec-grid(left, 40%); position: relative;z-index: 1;}
+    // .image-hlf {width:44%;
+    //   img.mobile{display: none;}
+    // }
 
 
     h4 {margin-bottom: 5px; font-weight: bold; color: $blue; }
@@ -459,7 +459,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
 
     .image-hlf{float: left; margin-left:8%; width: 45%;}
-    .text-hlf {margin-left: 0; padding:0 0 0 40px; margin-top: 1%; z-index: 2;
+    .text-hlf {margin-left: 0; padding:0 0 0 40px; margin-top: 1%; z-index: 2; 
       .text{width: 90%;}
       &::before{display: none;}
     }
@@ -474,6 +474,13 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       color:$white; text-shadow: 0px 1px 1px rgba($black, .6);
       margin-top: 10px;
       box-shadow: 0px 1px 5px rgba($black, .25);
+    }
+
+
+    .image-hlf, .text-hlf {@include sec-grid(left, 40%); position: relative;z-index: 1;}
+    .text-hlf {float: none;z-index: 2;}
+    .image-hlf {margin-left: 12%;
+      img.mobile{display: none;}
     }
   }
 
@@ -501,6 +508,15 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     }
   }
 
+
+  @media screen and (max-width:1165px) {
+    .contact-info {
+      .image-hlf, .text-hlf{width:47%;}
+      .image-hlf {width:45%; margin-left: 3%;}
+    }
+  }
+
+
   @include bp(tb) {
     .top-diag {
       .text{margin-left: 4%}
@@ -513,13 +529,18 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     .contact-info {
       padding:40px 0;
 
-      .image-hlf{float: left; margin-left:4%; width: 45%;
+      .image-hlf{
+        // float: left; margin-left:4%; width: 45%;
         img.mobile{display: block;}
         img.fw{display: none;}
       }
 
-      .text-hlf {width:45%; margin-left:4%; padding:0;
+      .text-hlf {
+        // width:45%; margin-left:4%; padding:0;
+        width:49%; margin-top: 0; padding-left: 25px;
         .text{width: 100%;}
+        p{font-size:15px;}
+        p.bhead{margin-bottom: 5px;}
       }
       h2 {margin-left: 0; font-size: 22px; }
     }
@@ -550,11 +571,14 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     }
 
     .contact-info { padding: 40px 0 25px;
-      .image-hlf{margin-left:2%; width: 45%;}
+      // .image-hlf{margin-left:2%; width: 45%;}
 
-      .text-hlf {width:48%; margin-top: 0; }
-      h2 {font-size: 20px; }
+      // .text-hlf {width:48%; margin-top: 0; }
+      .text-hlf,.image-hlf {width:75%; @include center-block(); text-align: center;}
+
+      h2 {font-size: 20px; margin-left:auto; text-align: center;}
       p {font-size: 15px; margin-bottom: 10px;}
+      hr.fancy{@include center-block();}
     }
 
     .payment-info{
@@ -572,11 +596,10 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     }
 
     .contact-info { padding: 40px 0 25px;
-      .image-hlf{display: none;}
-
-      .text-hlf {width:75%; @include center-block(); text-align: center;}
-      h2 {font-size: 18px; text-align: center;}
-      hr.fancy{@include center-block();}
+      // .image-hlf{display: none;}
+      // .text-hlf {width:75%; @include center-block(); text-align: center;}
+      h2 {font-size: 18px; }
+      // hr.fancy{@include center-block();}
     }
   }
 
