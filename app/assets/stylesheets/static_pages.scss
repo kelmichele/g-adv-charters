@@ -574,7 +574,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       // .image-hlf{margin-left:2%; width: 45%;}
 
       // .text-hlf {width:48%; margin-top: 0; }
-      .text-hlf,.image-hlf {width:75%; @include center-block(); text-align: center;}
+      .text-hlf,.image-hlf {width:75%; @include center-block(); text-align: center; padding-left:0;}
 
       h2 {font-size: 20px; margin-left:auto; text-align: center;}
       p {font-size: 15px; margin-bottom: 10px;}
