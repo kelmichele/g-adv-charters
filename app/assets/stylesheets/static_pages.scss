@@ -63,6 +63,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
 
 .home {
+  .img-test{display: none;}
   // overflow-x: hidden;
   body{@include sec-default();
     position: relative;z-index: 0;
@@ -263,6 +264,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     }
 
     .site-intro {
+      background-image:url(image_path('home-intro-mob.jpg'));
       height: auto;
       padding: 0;
       .inner{margin-top:0px; @include sec-default();height:350px; padding: 50px 20px 20px; background-color: rgba($black, .2);}
