@@ -196,6 +196,8 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
   footer p{color:$navy;}
 
+  .sec-mid{@include sec-default(); display: none;}
+
 
   @include bp(dt) {
     .site-intro {height:730px;}
@@ -203,7 +205,6 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
 
   @media screen and (max-width: 1200px) {
     .sec2 {
-      // .image {width: 33%; display:inline-block; float: right; margin-top:-5%; }
       .text-box {width: 55%; padding:60px 0; margin-left: 0;
         h4{font-size: 20px;}
         p{margin-bottom: 30px; font-size: 16px; padding-right:0px;}
@@ -247,16 +248,29 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       }
       h4 {font-size: 19px;}
     }
-  }
 
-  @media screen and (max-width:1020px) {
+
+    .sec1{padding-bottom: 70px;}
+    .sec-mid{display: block; padding:40px 0 0;
+      img{width:200px; @include center-block();}
+    }
     .sec2 {
-      .image {width: 30%; margin-top:-5%; }
-      .text-box {width: 65%; padding:60px 0;
+      .image {display: none;}
+      .text-box {width: 80%; padding:60px 0; @include center-block();
+        text-align: center;
         h4{font-size: 19px;}
       }
     }
   }
+
+  // @media screen and (max-width:1020px) {
+  //   .sec2 {
+  //     .image {width: 30%;}
+  //     .text-box {width: 65%; padding:60px 0;
+  //       h4{font-size: 19px;}
+  //     }
+  //   }
+  // }
 
   @include bp(tn) {
     header.site-header{
@@ -277,6 +291,7 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       .text {width: 100%;}
       h1 {font-size:27px; width:100%;}
     }
+    .sec1{padding-bottom: 45px;}
 
     .sec3 {
       .content-hlf {width: 53%;}
@@ -305,11 +320,13 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
       }
       h3{font-size: 16px;}
     }
+    .sec1{padding-bottom: 30px;}
 
     .sec2 {
-      .inner{width: 90%;}
-      .image {margin-top:-3.5%; }
+      // .inner{width: 90%;}
+      // .image {margin-top:-3.5%; }
       .text-box { padding:40px 0;
+        @include sec-default();
         h4{font-size: 19px;}
       }
     }
@@ -327,8 +344,9 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     .sec1 {padding: 20px 0 30px;}
 
     .sec2 {
-      .image {width: 20%; margin-left: -3%; position: absolute;}
-      .text-box {width:85%; padding:40px 0;
+      // .image {width: 20%; margin-left: -3%; position: absolute;}
+      .text-box {
+        // width:85%;
         h4{font-size: 18px;}
         p {font-size:15px;}
       }
@@ -368,12 +386,14 @@ hr.fancy { width: 35%;  opacity: .4; position: relative;z-index: 1;
     .sec1{padding-top: 20px;}
 
     .sec2 {background-repeat: repeat;
+      .inner{width: 90%;}
       .image {width: 18%; margin-left: -9%; }
-      .text-box{width: 94%; padding:25px 0;
+      .text-box{
+        // width: 94%; padding:25px 0;
         h4 {margin-bottom: 10px;}
         p {margin-bottom: 15px;}
-        .grad-link {padding: 10px 20px; width: 55%; text-align:center; display: block; margin-bottom: 10px;}
-        .grad-link.dos{margin-left: 0;}
+        .grad-link {padding: 10px 20px; width: 60%; text-align:center; display: block; @include center-block(); margin-bottom: 10px;}
+        .grad-link.dos{margin-left: auto;}
       }
     }
 
