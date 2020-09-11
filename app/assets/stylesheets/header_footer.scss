@@ -4,6 +4,9 @@
 /*****************************************/
 /***************HEADER*******************/
 /*****************************************/
+// .mobile-nav 
+.uk-offcanvas-bar .uk-close:after{display: none;}
+  
 header.site-header {@include sec-default(); text-align: center;
   .mobile-nav {display: none;}
 
@@ -20,7 +23,6 @@ header.site-header {@include sec-default(); text-align: center;
     .navlink.child{ font-size: 16px;}
   }
   .logo-nav {display:inline-block; width:12%; @include ease(); margin-top: 7px; margin-bottom: 0;}
-
 
 
   @media screen and (max-width:1200px) {
