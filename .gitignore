@@ -24,3 +24,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# previous ruby files before generating wrapper for 2.5.8
+.ruby-gemset.09.11.2020-11:53:22
+.ruby-version.09.11.2020-11:53:22
