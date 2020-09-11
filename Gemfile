@@ -11,7 +11,8 @@ gem 'puma', '~> 3.11'
 
 gem 'sass-rails', '~> 5.0'
 gem 'uikit-rails'
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem "bootstrap-sass", ">= 3.4.1"
+# gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
 gem 'uglifier', '>= 1.3.0'
 
